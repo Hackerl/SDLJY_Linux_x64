@@ -16,8 +16,8 @@ Uint32 g_MaskColor32=0x706020;      // 透明色
 
 int g_Rotate=0;              //屏幕是否旋转
 
-int g_ScreenW=640 ;          // 屏幕宽高
-int g_ScreenH=480 ;
+int g_ScreenW=1280 ;          // 屏幕宽高
+int g_ScreenH=720 ;
 int g_ScreenBpp=16 ;         // 屏幕色深
 int g_FullScreen=0;
 int g_EnableSound=1;         // 声音开关 0 关闭 1 打开
