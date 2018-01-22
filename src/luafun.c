@@ -18,13 +18,12 @@ int HAPI_DrawStr(lua_State *pL)
     int x=(int)lua_tonumber(pL,1);
 	int y=(int)lua_tonumber(pL,2);
 	const char *str=lua_tostring(pL,3);
-	int color=(int)lua_tonumber(pL,4);
-	int size=(int)lua_tonumber(pL,5);
-	const char *fontname=lua_tostring(pL,6);
-	int charset=(int)lua_tonumber(pL,7);
-	int OScharset=(int)lua_tonumber(pL,8);
+    int strsize=(int)lua_tonumber(pL,4);
+	int color=(int)lua_tonumber(pL,5);
+	int size=(int)lua_tonumber(pL,6);
+	const char *fontname=lua_tostring(pL,7);
 
-    JY_DrawStr(x, y, str,color,size,fontname,charset,OScharset);
+    JY_DrawStr(x, y, str,strsize ,color,size,fontname);
 
 	return 0;
 }

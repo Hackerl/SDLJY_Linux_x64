@@ -16,6 +16,7 @@ function IncludeFile()              --导入其他模块
     --dofile("config.lua");       --此文件在C函数中预先加载。这里就不加载了
     dofile(CONFIG.ScriptPath .. "jyconst.lua");
     dofile(CONFIG.ScriptPath .. "jymodify.lua");
+    dofile(CONFIG.ScriptPath .. "jycharset.lua"); -- 编码转换相关
 end
 
 
@@ -1768,7 +1769,7 @@ function GetDataFromStruct(data,offset,t_struct,key)  --从数据的结构中翻
 		r=Byte.getu16(data,t[1]+offset);
 	elseif t[2]==2 then
 		if CC.SrcCharSet==0 then
-			r=lib.CharSet(Byte.getstr(data,t[1]+offset,t[3]),0);
+			r=change_charsert(Byte.getstr(data,t[1]+offset,t[3]),0);
 		else
 			r=Byte.getstr(data,t[1]+offset,t[3]);
 		end
@@ -1785,7 +1786,7 @@ function SetDataFromStruct(data,offset,t_struct,key,v)  --从数据的结构中�
 	elseif t[2]==2 then
 		local s;
 		if CC.SrcCharSet==0 then
-			s=lib.CharSet(v,1);
+			s=change_charsert(v,1);
 		else
 			s=v;
 		end
@@ -1802,7 +1803,7 @@ function LoadData(t,t_struct,data)        --data二进制串中读到表t中
             t[k]=Byte.getu16(data,v[1]);
 		elseif v[2]==2 then
             if CC.SrcCharSet==0 then
-                t[k]=lib.CharSet(Byte.getstr(data,v[1],v[3]),0);
+                t[k]=change_charsert(Byte.getstr(data,v[1],v[3]),0);
 		    else
 		        t[k]=Byte.getstr(data,v[1],v[3]);
 		    end
@@ -1820,7 +1821,7 @@ function SaveData(t,t_struct,data)      --数据写入data Byte数组中。
 		elseif v[2]==2 then
 		    local s;
 			if CC.SrcCharSet==0 then
-			    s=lib.CharSet(t[k],1);
+			    s=change_charsert(t[k],1);
             else
 			    s=t[k];
 		    end
@@ -1896,7 +1897,11 @@ end
 function DrawString(x,y,str,color,size)         --显示阴影字符串
 --    local r,g,b=GetRGB(color);
 --    lib.DrawStr(x+1,y+1,str,RGB(math.modf(r/2),math.modf(g/2),math.modf(b/2)),size,CC.FontName,CC.SrcCharSet,CC.OSCharSet);
-    lib.DrawStr(x,y,str,color,size,CC.FontName,CC.SrcCharSet,CC.OSCharSet);
+    -- 统一转换位 unicode
+    print(str);
+    str = change_charsert(str, 3);
+    print(str);
+    lib.DrawStr(x,y,str,string.len(str) ,color,size,CC.FontName);
 end
 
 --显示带框的字符串

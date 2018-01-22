@@ -49,7 +49,7 @@ function SetGlobalConst()
    --游戏数据全局变量
    CC={};      --定义游戏中使用的常量，这些可以在修改游戏时修改之
 
-   CC.SrcCharSet=0;         --源代码的字符集 0 gb  1 big5，用于转换R×。 如果源码被转换为big5，则应设为1
+   CC.SrcCharSet=0;         --源代码的字符集 0 utf8  1 big5，用于转换R×。 如果源码被转换为big5，则应设为1
    CC.OSCharSet=CONFIG.OSCharSet;         --OS 字符集，0 GB, 1 Big5
    CC.FontName=CONFIG.FontName;    --显示字体
 

@@ -110,23 +110,24 @@ static TTF_Font *GetFont(const char *filename,int size)
 // fontname 字体名
 // charset 字符集 0 GBK 1 big5
 // OScharset 0 简体显示 1 繁体显示
-int JY_DrawStr(int x, int y, const char *str,int color,int size,const char *fontname, 
-			   int charset, int OScharset)
+int JY_DrawStr(int x, int y, const char *str, int strlen, int color,int size,const char *fontname)
 {
     SDL_Color c,c2;   
 	SDL_Surface *fontSurface=NULL;
 	int w,h;
 	SDL_Rect rect1,rect2,rect_dest;
 	SDL_Rect rect;
-	char tmp1[256],tmp2[256];
+    char tmp1[256];
     TTF_Font *myfont;
 	SDL_Surface *tempSurface;
 
-
-	if(strlen(str)>127){
+	if(strlen > 127){
 		JY_Error("JY_DrawStr: string length more than 127: %s",str);
 	    return 0;
 	}
+    memset(tmp1, 0, 256);
+    memcpy(tmp1, str , 256);
+
 
     myfont=GetFont(fontname,size);
 	if(myfont==NULL)
@@ -139,9 +140,6 @@ int JY_DrawStr(int x, int y, const char *str,int color,int size,const char *font
 	c2.r=c.r>>1;   //阴影色
 	c2.b=c.b>>1;
 	c2.g=c.g>>1;
-
-    strcpy(tmp2,str);
-
 	 
 	if(g_Rotate==0){
 		rect=g_Surface->clip_rect; 
@@ -150,14 +148,14 @@ int JY_DrawStr(int x, int y, const char *str,int color,int size,const char *font
 	    rect=RotateReverseRect(&g_Surface->clip_rect);
 	}
 
-    TTF_SizeUNICODE(myfont, (Uint16*)tmp2, &w, &h);
+    TTF_SizeUNICODE(myfont, (Uint16*)tmp1, &w, &h);
 	
 	if( (x>=rect.x+rect.w) || (x+w+1) <=rect.x ||
 		(y>=rect.y+rect.h) || (y+h+1) <=rect.y){      // 超出裁剪范围则不显示
         return 1;
 	}
 
-    fontSurface=TTF_RenderUNICODE_Solid(myfont, (Uint16*)tmp2, c);  //生成表面
+    fontSurface=TTF_RenderUNICODE_Solid(myfont, (Uint16*)tmp1, c);  //生成表面
     
     if(fontSurface==NULL)
 		return 1;
