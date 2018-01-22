@@ -2098,8 +2098,8 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
     local maxlength=0;
     if x2==0 and y2==0 then
         for i=1,newNumItem do
-            if string.len(newMenu[i][1])>maxlength then
-                maxlength=string.len(newMenu[i][1]);
+            if string.utf8len(newMenu[i][1]) * 2 > maxlength then
+                maxlength=string.utf8len(newMenu[i][1]) *2;
             end
         end
         w=size*maxlength/2+2*CC.MenuBorderPixel;        --按照半个汉字计算宽度，一边留4个象素
