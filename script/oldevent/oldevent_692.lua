@@ -1,4 +1,4 @@
 --function oldevent_692()
-    instruct_51();   --  51(33):ÎÊÈíÌåÍŞÍŞ
+    instruct_51();   --  51(33):é—®è½¯ä½“å¨ƒå¨ƒ
 --end
 

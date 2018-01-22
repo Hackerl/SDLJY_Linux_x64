@@ -107,7 +107,8 @@ int LoadMB(const char* mbfile);
 //      = 2   Big5 --> Unicode
 //      = 3   GBK  --> Unicode
 // 注意要保证dest有足够的空间，一般建议取src长度的两倍+1，保证全英文字符也能转化为unicode
-int  JY_CharSet(const char *src, char *dest, int flag);
+//int  JY_CharSet(const char *src, char *dest, int flag);
+// 将编码转换放入lua C中统一unicode输出
 
 
 

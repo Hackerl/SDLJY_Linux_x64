@@ -55,8 +55,6 @@ static const struct luaL_reg jylib [] = {
 
       {"Delay", HAPI_Delay},
       {"GetTime", HAPI_GetTime},
-  
-      {"CharSet", HAPI_CharSet},
       {"DrawStr", HAPI_DrawStr},
 
       

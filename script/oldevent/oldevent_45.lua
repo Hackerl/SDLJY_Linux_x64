@@ -1,4 +1,4 @@
 --function oldevent_45()
-    instruct_0();   --  0(0)::¿ÕÓï¾ä(ÇåÆÁ)
+    instruct_0();   --  0(0)::ç©ºè¯­å¥(æ¸…å±)
 --end
 

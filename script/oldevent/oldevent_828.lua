@@ -1,4 +1,4 @@
 --function oldevent_828()
-    instruct_53();   --  53(35):¿´ÉùÍû
+    instruct_53();   --  53(35):çœ‹å£°æœ›
 --end
 

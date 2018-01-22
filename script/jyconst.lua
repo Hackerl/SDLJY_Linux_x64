@@ -1,7 +1,7 @@
 
---ÉèÖÃÈ«¾Ö±äÁ¿CC£¬±£´æÓÎÏ·ÖĞÊ¹ÓÃµÄ³£Êı
+--è®¾ç½®å…¨å±€å˜é‡CCï¼Œä¿å­˜æ¸¸æˆä¸­ä½¿ç”¨çš„å¸¸æ•°
 function SetGlobalConst()
-    -- SDL ¼üÂë¶¨Òå£¬ÕâÀïÃû×ÖÈÔÈ»Ê¹ÓÃdirectxµÄÃû×Ö
+    -- SDL é”®ç å®šä¹‰ï¼Œè¿™é‡Œåå­—ä»ç„¶ä½¿ç”¨directxçš„åå­—
     VK_ESCAPE=27
     VK_Y=121
 	VK_N=110
@@ -18,7 +18,7 @@ function SetGlobalConst()
 	    VK_DOWN=SDLK_DOWN;
 	    VK_LEFT=SDLK_LEFT;
 	    VK_RIGHT=SDLK_RIGHT;
-	else           --ÓÒ×ª90¶È
+	else           --å³è½¬90åº¦
 	    VK_UP=SDLK_RIGHT;
 	    VK_DOWN=SDLK_LEFT;
 	    VK_LEFT=SDLK_UP;
@@ -26,37 +26,37 @@ function SetGlobalConst()
 	end
 
 
-   -- ÓÎÏ·ÖĞÑÕÉ«¶¨Òå
-    C_STARTMENU=RGB(132, 0, 4)            -- ¿ªÊ¼²Ëµ¥ÑÕÉ«
-    C_RED=RGB(216, 20, 24)                -- ¿ªÊ¼²Ëµ¥Ñ¡ÖĞÏîÑÕÉ«
+   -- æ¸¸æˆä¸­é¢œè‰²å®šä¹‰
+    C_STARTMENU=RGB(132, 0, 4)            -- å¼€å§‹èœå•é¢œè‰²
+    C_RED=RGB(216, 20, 24)                -- å¼€å§‹èœå•é€‰ä¸­é¡¹é¢œè‰²
 
-    C_WHITE=RGB(236, 236, 236);           --ÓÎÏ·ÄÚ³£ÓÃµÄ¼¸¸öÑÕÉ«Öµ
+    C_WHITE=RGB(236, 236, 236);           --æ¸¸æˆå†…å¸¸ç”¨çš„å‡ ä¸ªé¢œè‰²å€¼
     C_ORANGE=RGB(252, 148, 16);
     C_GOLD=RGB(236, 200, 40);
     C_BLACK=RGB(0,0,0);
 
 
-   -- ÓÎÏ·×´Ì¬¶¨Òå
-    GAME_START =0       --¿ªÊ¼»­Ãæ
-    GAME_FIRSTMMAP = 1  --µÚÒ»´ÎÏÔÊ¾Ö÷µØÍ¼
-    GAME_MMAP =2;       --Ö÷µØÍ¼
-    GAME_FIRSTSMAP = 3  --µÚÒ»´ÎÏÔÊ¾Ö÷µØÍ¼
-    GAME_SMAP =4;       --³¡¾°µØÍ¼
-    GAME_WMAP =5;       --Õ½¶·µØÍ¼
-	GAME_DEAD =6;       --ËÀÍö»­Ãæ
-    GAME_END  =7;       --½áÊø
+   -- æ¸¸æˆçŠ¶æ€å®šä¹‰
+    GAME_START =0       --å¼€å§‹ç”»é¢
+    GAME_FIRSTMMAP = 1  --ç¬¬ä¸€æ¬¡æ˜¾ç¤ºä¸»åœ°å›¾
+    GAME_MMAP =2;       --ä¸»åœ°å›¾
+    GAME_FIRSTSMAP = 3  --ç¬¬ä¸€æ¬¡æ˜¾ç¤ºä¸»åœ°å›¾
+    GAME_SMAP =4;       --åœºæ™¯åœ°å›¾
+    GAME_WMAP =5;       --æˆ˜æ–—åœ°å›¾
+	GAME_DEAD =6;       --æ­»äº¡ç”»é¢
+    GAME_END  =7;       --ç»“æŸ
 
-   --ÓÎÏ·Êı¾İÈ«¾Ö±äÁ¿
-   CC={};      --¶¨ÒåÓÎÏ·ÖĞÊ¹ÓÃµÄ³£Á¿£¬ÕâĞ©¿ÉÒÔÔÚĞŞ¸ÄÓÎÏ·Ê±ĞŞ¸ÄÖ®
+   --æ¸¸æˆæ•°æ®å…¨å±€å˜é‡
+   CC={};      --å®šä¹‰æ¸¸æˆä¸­ä½¿ç”¨çš„å¸¸é‡ï¼Œè¿™äº›å¯ä»¥åœ¨ä¿®æ”¹æ¸¸æˆæ—¶ä¿®æ”¹ä¹‹
 
-   CC.SrcCharSet=0;         --Ô´´úÂëµÄ×Ö·û¼¯ 0 gb  1 big5£¬ÓÃÓÚ×ª»»R¡Á¡£ Èç¹ûÔ´Âë±»×ª»»Îªbig5£¬ÔòÓ¦ÉèÎª1
-   CC.OSCharSet=CONFIG.OSCharSet;         --OS ×Ö·û¼¯£¬0 GB, 1 Big5
-   CC.FontName=CONFIG.FontName;    --ÏÔÊ¾×ÖÌå
+   CC.SrcCharSet=0;         --æºä»£ç çš„å­—ç¬¦é›† 0 gb  1 big5ï¼Œç”¨äºè½¬æ¢RÃ—ã€‚ å¦‚æœæºç è¢«è½¬æ¢ä¸ºbig5ï¼Œåˆ™åº”è®¾ä¸º1
+   CC.OSCharSet=CONFIG.OSCharSet;         --OS å­—ç¬¦é›†ï¼Œ0 GB, 1 Big5
+   CC.FontName=CONFIG.FontName;    --æ˜¾ç¤ºå­—ä½“
 
-   CC.ScreenW=CONFIG.Width;          --ÏÔÊ¾´°¿Ú¿í¸ß
+   CC.ScreenW=CONFIG.Width;          --æ˜¾ç¤ºçª—å£å®½é«˜
    CC.ScreenH=CONFIG.Height;
 
-   --¶¨Òå¼ÇÂ¼ÎÄ¼şÃû¡£SºÍDÓÉÓÚÊÇ¹Ì¶¨´óĞ¡£¬Òò´Ë²»ÔÙ¶¨ÒåidxÁË¡£
+   --å®šä¹‰è®°å½•æ–‡ä»¶åã€‚Så’ŒDç”±äºæ˜¯å›ºå®šå¤§å°ï¼Œå› æ­¤ä¸å†å®šä¹‰idxäº†ã€‚
    CC.R_IDXFilename={[0]=CONFIG.DataPath .. "ranger.idx",
                      CONFIG.DataPath .. "r1.idx",
 					 CONFIG.DataPath .. "r2.idx",
@@ -88,12 +88,12 @@ function SetGlobalConst()
 		        CONFIG.DataPath .. "buildx.002",
 				CONFIG.DataPath .. "buildy.002"};
 
-   --¸÷ÖÖÌùÍ¼ÎÄ¼şÃû¡£
+   --å„ç§è´´å›¾æ–‡ä»¶åã€‚
    CC.MMAPPicFile={CONFIG.DataPath .. "mmap.idx",CONFIG.DataPath .. "mmap.grp"};
    CC.SMAPPicFile={CONFIG.DataPath .. "smap.idx",CONFIG.DataPath .. "smap.grp"};
    CC.WMAPPicFile={CONFIG.DataPath .. "wmap.idx",CONFIG.DataPath .. "wmap.grp"};
    CC.EffectFile={CONFIG.DataPath .. "eft.idx",CONFIG.DataPath .. "eft.grp"};
-   CC.FightPicFile={CONFIG.DataPath .. "fight%03d.idx",CONFIG.DataPath .. "fight%03d.grp"};  --´Ë´¦Îª×Ö·û´®¸ñÊ½£¬ÀàËÆÓÚCÖĞprintfµÄ¸ñÊ½¡£
+   CC.FightPicFile={CONFIG.DataPath .. "fight%03d.idx",CONFIG.DataPath .. "fight%03d.grp"};  --æ­¤å¤„ä¸ºå­—ç¬¦ä¸²æ ¼å¼ï¼Œç±»ä¼¼äºCä¸­printfçš„æ ¼å¼ã€‚
 
    CC.HeadPicFile={CONFIG.DataPath .. "hdgrp.idx",CONFIG.DataPath .. "hdgrp.grp"};
    CC.ThingPicFile={CONFIG.DataPath .. "thing.idx",CONFIG.DataPath .. "thing.grp"};
@@ -110,256 +110,256 @@ function SetGlobalConst()
    CC.TalkIdxFile=CONFIG.ScriptPath .. "oldtalk.idx";
    CC.TalkGrpFile=CONFIG.ScriptPath .. "oldtalk.grp";
 
-   --¶¨Òå¼ÇÂ¼ÎÄ¼şR¡Á½á¹¹¡£  lua²»Ö§³Ö½á¹¹£¬ÎŞ·¨Ö±½Ó´Ó¶ş½øÖÆÎÄ¼şÖĞ¶ÁÈ¡£¬Òò´ËĞèÒªÕâĞ©¶¨Òå£¬ÓÃtableÖĞ²»Í¬µÄÃû×ÖÀ´·ÂÕæ½á¹¹¡£
-   CC.TeamNum=6;          --¶ÓÎéÈËÊı
-   CC.MyThingNum=200      --Ö÷½ÇÎïÆ·ÊıÁ¿
+   --å®šä¹‰è®°å½•æ–‡ä»¶RÃ—ç»“æ„ã€‚  luaä¸æ”¯æŒç»“æ„ï¼Œæ— æ³•ç›´æ¥ä»äºŒè¿›åˆ¶æ–‡ä»¶ä¸­è¯»å–ï¼Œå› æ­¤éœ€è¦è¿™äº›å®šä¹‰ï¼Œç”¨tableä¸­ä¸åŒçš„åå­—æ¥ä»¿çœŸç»“æ„ã€‚
+   CC.TeamNum=6;          --é˜Ÿä¼äººæ•°
+   CC.MyThingNum=200      --ä¸»è§’ç‰©å“æ•°é‡
 
-   CC.Base_S={};         --±£´æ»ù±¾Êı¾İµÄ½á¹¹£¬ÒÔ±ãÒÔºó´æÈ¡
-   CC.Base_S["³Ë´¬"]={0,0,2}   -- ÆğÊ¼Î»ÖÃ(´Ó0¿ªÊ¼)£¬Êı¾İÀàĞÍ(0ÓĞ·ûºÅ 1ÎŞ·ûºÅ£¬2×Ö·û´®)£¬³¤¶È
-   CC.Base_S["ÎŞÓÃ"]={2,0,2};
-   CC.Base_S["ÈËX"]={4,0,2};
-   CC.Base_S["ÈËY"]={6,0,2};
-   CC.Base_S["ÈËX1"]={8,0,2};
-   CC.Base_S["ÈËY1"]={10,0,2};
-   CC.Base_S["ÈË·½Ïò"]={12,0,2};
-   CC.Base_S["´¬X"]={14,0,2};
-   CC.Base_S["´¬Y"]={16,0,2};
-   CC.Base_S["´¬X1"]={18,0,2};
-   CC.Base_S["´¬Y1"]={20,0,2};
-   CC.Base_S["´¬·½Ïò"]={22,0,2};
+   CC.Base_S={};         --ä¿å­˜åŸºæœ¬æ•°æ®çš„ç»“æ„ï¼Œä»¥ä¾¿ä»¥åå­˜å–
+   CC.Base_S["ä¹˜èˆ¹"]={0,0,2}   -- èµ·å§‹ä½ç½®(ä»0å¼€å§‹)ï¼Œæ•°æ®ç±»å‹(0æœ‰ç¬¦å· 1æ— ç¬¦å·ï¼Œ2å­—ç¬¦ä¸²)ï¼Œé•¿åº¦
+   CC.Base_S["æ— ç”¨"]={2,0,2};
+   CC.Base_S["äººX"]={4,0,2};
+   CC.Base_S["äººY"]={6,0,2};
+   CC.Base_S["äººX1"]={8,0,2};
+   CC.Base_S["äººY1"]={10,0,2};
+   CC.Base_S["äººæ–¹å‘"]={12,0,2};
+   CC.Base_S["èˆ¹X"]={14,0,2};
+   CC.Base_S["èˆ¹Y"]={16,0,2};
+   CC.Base_S["èˆ¹X1"]={18,0,2};
+   CC.Base_S["èˆ¹Y1"]={20,0,2};
+   CC.Base_S["èˆ¹æ–¹å‘"]={22,0,2};
 
    for i=1,CC.TeamNum do
-        CC.Base_S["¶ÓÎé" .. i]={24+2*(i-1),0,2};
+        CC.Base_S["é˜Ÿä¼" .. i]={24+2*(i-1),0,2};
    end
 
    for i=1,CC.MyThingNum do
-        CC.Base_S["ÎïÆ·" .. i]={36+4*(i-1),0,2};
-        CC.Base_S["ÎïÆ·ÊıÁ¿" .. i]={36+4*(i-1)+2,0,2};
+        CC.Base_S["ç‰©å“" .. i]={36+4*(i-1),0,2};
+        CC.Base_S["ç‰©å“æ•°é‡" .. i]={36+4*(i-1)+2,0,2};
    end
 
-    CC.PersonSize=182;   --Ã¿¸öÈËÎïÊı¾İÕ¼ÓÃ×Ö½Ú
-    CC.Person_S={};      --±£´æÈËÎïÊı¾İµÄ½á¹¹£¬ÒÔ±ãÒÔºó´æÈ¡
-    CC.Person_S["´úºÅ"]={0,0,2}
-    CC.Person_S["Í·Ïñ´úºÅ"]={2,0,2}
-    CC.Person_S["ÉúÃüÔö³¤"]={4,0,2}
-    CC.Person_S["ÎŞÓÃ"]={6,0,2}
-    CC.Person_S["ĞÕÃû"]={8,2,10}
-    CC.Person_S["ÍâºÅ"]={18,2,10}
-    CC.Person_S["ĞÔ±ğ"]={28,0,2}
-    CC.Person_S["µÈ¼¶"]={30,0,2}
-    CC.Person_S["¾­Ñé"]={32,1,2}
-    CC.Person_S["ÉúÃü"]={34,0,2}
-    CC.Person_S["ÉúÃü×î´óÖµ"]={36,0,2}
-    CC.Person_S["ÊÜÉË³Ì¶È"]={38,0,2}
-    CC.Person_S["ÖĞ¶¾³Ì¶È"]={40,0,2}
-    CC.Person_S["ÌåÁ¦"]={42,0,2}
-    CC.Person_S["ÎïÆ·ĞŞÁ¶µãÊı"]={44,0,2}
-    CC.Person_S["ÎäÆ÷"]={46,0,2}
-    CC.Person_S["·À¾ß"]={48,0,2}
+    CC.PersonSize=182;   --æ¯ä¸ªäººç‰©æ•°æ®å ç”¨å­—èŠ‚
+    CC.Person_S={};      --ä¿å­˜äººç‰©æ•°æ®çš„ç»“æ„ï¼Œä»¥ä¾¿ä»¥åå­˜å–
+    CC.Person_S["ä»£å·"]={0,0,2}
+    CC.Person_S["å¤´åƒä»£å·"]={2,0,2}
+    CC.Person_S["ç”Ÿå‘½å¢é•¿"]={4,0,2}
+    CC.Person_S["æ— ç”¨"]={6,0,2}
+    CC.Person_S["å§“å"]={8,2,10}
+    CC.Person_S["å¤–å·"]={18,2,10}
+    CC.Person_S["æ€§åˆ«"]={28,0,2}
+    CC.Person_S["ç­‰çº§"]={30,0,2}
+    CC.Person_S["ç»éªŒ"]={32,1,2}
+    CC.Person_S["ç”Ÿå‘½"]={34,0,2}
+    CC.Person_S["ç”Ÿå‘½æœ€å¤§å€¼"]={36,0,2}
+    CC.Person_S["å—ä¼¤ç¨‹åº¦"]={38,0,2}
+    CC.Person_S["ä¸­æ¯’ç¨‹åº¦"]={40,0,2}
+    CC.Person_S["ä½“åŠ›"]={42,0,2}
+    CC.Person_S["ç‰©å“ä¿®ç‚¼ç‚¹æ•°"]={44,0,2}
+    CC.Person_S["æ­¦å™¨"]={46,0,2}
+    CC.Person_S["é˜²å…·"]={48,0,2}
 
      for i=1,5 do
-        CC.Person_S["³öÕĞ¶¯»­Ö¡Êı" .. i]={50+2*(i-1),0,2};
-        CC.Person_S["³öÕĞ¶¯»­ÑÓ³Ù" .. i]={60+2*(i-1),0,2};
-        CC.Person_S["Îä¹¦ÒôĞ§ÑÓ³Ù" .. i]={70+2*(i-1),0,2};
+        CC.Person_S["å‡ºæ‹›åŠ¨ç”»å¸§æ•°" .. i]={50+2*(i-1),0,2};
+        CC.Person_S["å‡ºæ‹›åŠ¨ç”»å»¶è¿Ÿ" .. i]={60+2*(i-1),0,2};
+        CC.Person_S["æ­¦åŠŸéŸ³æ•ˆå»¶è¿Ÿ" .. i]={70+2*(i-1),0,2};
      end
 
-    CC.Person_S["ÄÚÁ¦ĞÔÖÊ"]={80,0,2}
-    CC.Person_S["ÄÚÁ¦"]={82,0,2}
-    CC.Person_S["ÄÚÁ¦×î´óÖµ"]={84,0,2}
-    CC.Person_S["¹¥»÷Á¦"]={86,0,2}
-    CC.Person_S["Çá¹¦"]={88,0,2}
-    CC.Person_S["·ÀÓùÁ¦"]={90,0,2}
-    CC.Person_S["Ò½ÁÆÄÜÁ¦"]={92,0,2}
-    CC.Person_S["ÓÃ¶¾ÄÜÁ¦"]={94,0,2}
-    CC.Person_S["½â¶¾ÄÜÁ¦"]={96,0,2}
-    CC.Person_S["¿¹¶¾ÄÜÁ¦"]={98,0,2}
+    CC.Person_S["å†…åŠ›æ€§è´¨"]={80,0,2}
+    CC.Person_S["å†…åŠ›"]={82,0,2}
+    CC.Person_S["å†…åŠ›æœ€å¤§å€¼"]={84,0,2}
+    CC.Person_S["æ”»å‡»åŠ›"]={86,0,2}
+    CC.Person_S["è½»åŠŸ"]={88,0,2}
+    CC.Person_S["é˜²å¾¡åŠ›"]={90,0,2}
+    CC.Person_S["åŒ»ç–—èƒ½åŠ›"]={92,0,2}
+    CC.Person_S["ç”¨æ¯’èƒ½åŠ›"]={94,0,2}
+    CC.Person_S["è§£æ¯’èƒ½åŠ›"]={96,0,2}
+    CC.Person_S["æŠ—æ¯’èƒ½åŠ›"]={98,0,2}
 
-    CC.Person_S["È­ÕÆ¹¦·ò"]={100,0,2}
-    CC.Person_S["Óù½£ÄÜÁ¦"]={102,0,2}
-    CC.Person_S["Ë£µ¶¼¼ÇÉ"]={104,0,2}
-    CC.Person_S["ÌØÊâ±øÆ÷"]={106,0,2}
-    CC.Person_S["°µÆ÷¼¼ÇÉ"]={108,0,2}
+    CC.Person_S["æ‹³æŒåŠŸå¤«"]={100,0,2}
+    CC.Person_S["å¾¡å‰‘èƒ½åŠ›"]={102,0,2}
+    CC.Person_S["è€åˆ€æŠ€å·§"]={104,0,2}
+    CC.Person_S["ç‰¹æ®Šå…µå™¨"]={106,0,2}
+    CC.Person_S["æš—å™¨æŠ€å·§"]={108,0,2}
 
 
-    CC.Person_S["ÎäÑ§³£Ê¶"]={110,0,2}
-    CC.Person_S["Æ·µÂ"]={112,0,2}
-    CC.Person_S["¹¥»÷´ø¶¾"]={114,0,2}
-    CC.Person_S["×óÓÒ»¥²«"]={116,0,2}
-    CC.Person_S["ÉùÍû"]={118,0,2}
+    CC.Person_S["æ­¦å­¦å¸¸è¯†"]={110,0,2}
+    CC.Person_S["å“å¾·"]={112,0,2}
+    CC.Person_S["æ”»å‡»å¸¦æ¯’"]={114,0,2}
+    CC.Person_S["å·¦å³äº’æ"]={116,0,2}
+    CC.Person_S["å£°æœ›"]={118,0,2}
 
-    CC.Person_S["×ÊÖÊ"]={120,0,2}
-    CC.Person_S["ĞŞÁ¶ÎïÆ·"]={122,0,2}
-    CC.Person_S["ĞŞÁ¶µãÊı"]={124,0,2}
+    CC.Person_S["èµ„è´¨"]={120,0,2}
+    CC.Person_S["ä¿®ç‚¼ç‰©å“"]={122,0,2}
+    CC.Person_S["ä¿®ç‚¼ç‚¹æ•°"]={124,0,2}
 
      for i=1,10 do
-        CC.Person_S["Îä¹¦" .. i]={126+2*(i-1),0,2};
-        CC.Person_S["Îä¹¦µÈ¼¶" .. i]={146+2*(i-1),0,2};
+        CC.Person_S["æ­¦åŠŸ" .. i]={126+2*(i-1),0,2};
+        CC.Person_S["æ­¦åŠŸç­‰çº§" .. i]={146+2*(i-1),0,2};
      end
 
      for i=1,4 do
-        CC.Person_S["Ğ¯´øÎïÆ·" .. i]={166+2*(i-1),0,2};
-        CC.Person_S["Ğ¯´øÎïÆ·ÊıÁ¿" .. i]={174+2*(i-1),0,2};
+        CC.Person_S["æºå¸¦ç‰©å“" .. i]={166+2*(i-1),0,2};
+        CC.Person_S["æºå¸¦ç‰©å“æ•°é‡" .. i]={174+2*(i-1),0,2};
      end
 
-    CC.ThingSize=190;   --Ã¿¸öÈËÎïÊı¾İÕ¼ÓÃ×Ö½Ú
+    CC.ThingSize=190;   --æ¯ä¸ªäººç‰©æ•°æ®å ç”¨å­—èŠ‚
     CC.Thing_S={};
-    CC.Thing_S["´úºÅ"]={0,0,2}
-    CC.Thing_S["Ãû³Æ"]={2,2,20}
-    CC.Thing_S["Ãû³Æ2"]={22,2,20}
-    CC.Thing_S["ÎïÆ·ËµÃ÷"]={42,2,30}
-    CC.Thing_S["Á·³öÎä¹¦"]={72,0,2}
-    CC.Thing_S["°µÆ÷¶¯»­±àºÅ"]={74,0,2}
-    CC.Thing_S["Ê¹ÓÃÈË"]={76,0,2}
-    CC.Thing_S["×°±¸ÀàĞÍ"]={78,0,2}
-    CC.Thing_S["ÏÔÊ¾ÎïÆ·ËµÃ÷"]={80,0,2}
-    CC.Thing_S["ÀàĞÍ"]={82,0,2}
-    CC.Thing_S["Î´Öª5"]={84,0,2}
-    CC.Thing_S["Î´Öª6"]={86,0,2}
-    CC.Thing_S["Î´Öª7"]={88,0,2}
-    CC.Thing_S["¼ÓÉúÃü"]={90,0,2}
-    CC.Thing_S["¼ÓÉúÃü×î´óÖµ"]={92,0,2}
-    CC.Thing_S["¼ÓÖĞ¶¾½â¶¾"]={94,0,2}
-    CC.Thing_S["¼ÓÌåÁ¦"]={96,0,2}
-    CC.Thing_S["¸Ä±äÄÚÁ¦ĞÔÖÊ"]={98,0,2}
-    CC.Thing_S["¼ÓÄÚÁ¦"]={100,0,2}
+    CC.Thing_S["ä»£å·"]={0,0,2}
+    CC.Thing_S["åç§°"]={2,2,20}
+    CC.Thing_S["åç§°2"]={22,2,20}
+    CC.Thing_S["ç‰©å“è¯´æ˜"]={42,2,30}
+    CC.Thing_S["ç»ƒå‡ºæ­¦åŠŸ"]={72,0,2}
+    CC.Thing_S["æš—å™¨åŠ¨ç”»ç¼–å·"]={74,0,2}
+    CC.Thing_S["ä½¿ç”¨äºº"]={76,0,2}
+    CC.Thing_S["è£…å¤‡ç±»å‹"]={78,0,2}
+    CC.Thing_S["æ˜¾ç¤ºç‰©å“è¯´æ˜"]={80,0,2}
+    CC.Thing_S["ç±»å‹"]={82,0,2}
+    CC.Thing_S["æœªçŸ¥5"]={84,0,2}
+    CC.Thing_S["æœªçŸ¥6"]={86,0,2}
+    CC.Thing_S["æœªçŸ¥7"]={88,0,2}
+    CC.Thing_S["åŠ ç”Ÿå‘½"]={90,0,2}
+    CC.Thing_S["åŠ ç”Ÿå‘½æœ€å¤§å€¼"]={92,0,2}
+    CC.Thing_S["åŠ ä¸­æ¯’è§£æ¯’"]={94,0,2}
+    CC.Thing_S["åŠ ä½“åŠ›"]={96,0,2}
+    CC.Thing_S["æ”¹å˜å†…åŠ›æ€§è´¨"]={98,0,2}
+    CC.Thing_S["åŠ å†…åŠ›"]={100,0,2}
 
-    CC.Thing_S["¼ÓÄÚÁ¦×î´óÖµ"]={102,0,2}
-    CC.Thing_S["¼Ó¹¥»÷Á¦"]={104,0,2}
-    CC.Thing_S["¼ÓÇá¹¦"]={106,0,2}
-    CC.Thing_S["¼Ó·ÀÓùÁ¦"]={108,0,2}
-    CC.Thing_S["¼ÓÒ½ÁÆÄÜÁ¦"]={110,0,2}
+    CC.Thing_S["åŠ å†…åŠ›æœ€å¤§å€¼"]={102,0,2}
+    CC.Thing_S["åŠ æ”»å‡»åŠ›"]={104,0,2}
+    CC.Thing_S["åŠ è½»åŠŸ"]={106,0,2}
+    CC.Thing_S["åŠ é˜²å¾¡åŠ›"]={108,0,2}
+    CC.Thing_S["åŠ åŒ»ç–—èƒ½åŠ›"]={110,0,2}
 
-    CC.Thing_S["¼ÓÓÃ¶¾ÄÜÁ¦"]={112,0,2}
-    CC.Thing_S["¼Ó½â¶¾ÄÜÁ¦"]={114,0,2}
-    CC.Thing_S["¼Ó¿¹¶¾ÄÜÁ¦"]={116,0,2}
-    CC.Thing_S["¼ÓÈ­ÕÆ¹¦·ò"]={118,0,2}
-    CC.Thing_S["¼ÓÓù½£ÄÜÁ¦"]={120,0,2}
+    CC.Thing_S["åŠ ç”¨æ¯’èƒ½åŠ›"]={112,0,2}
+    CC.Thing_S["åŠ è§£æ¯’èƒ½åŠ›"]={114,0,2}
+    CC.Thing_S["åŠ æŠ—æ¯’èƒ½åŠ›"]={116,0,2}
+    CC.Thing_S["åŠ æ‹³æŒåŠŸå¤«"]={118,0,2}
+    CC.Thing_S["åŠ å¾¡å‰‘èƒ½åŠ›"]={120,0,2}
 
-    CC.Thing_S["¼ÓË£µ¶¼¼ÇÉ"]={122,0,2}
-    CC.Thing_S["¼ÓÌØÊâ±øÆ÷"]={124,0,2}
-    CC.Thing_S["¼Ó°µÆ÷¼¼ÇÉ"]={126,0,2}
-    CC.Thing_S["¼ÓÎäÑ§³£Ê¶"]={128,0,2}
-    CC.Thing_S["¼ÓÆ·µÂ"]={130,0,2}
+    CC.Thing_S["åŠ è€åˆ€æŠ€å·§"]={122,0,2}
+    CC.Thing_S["åŠ ç‰¹æ®Šå…µå™¨"]={124,0,2}
+    CC.Thing_S["åŠ æš—å™¨æŠ€å·§"]={126,0,2}
+    CC.Thing_S["åŠ æ­¦å­¦å¸¸è¯†"]={128,0,2}
+    CC.Thing_S["åŠ å“å¾·"]={130,0,2}
 
-    CC.Thing_S["¼Ó¹¥»÷´ÎÊı"]={132,0,2}
-    CC.Thing_S["¼Ó¹¥»÷´ø¶¾"]={134,0,2}
-    CC.Thing_S["½öĞŞÁ¶ÈËÎï"]={136,0,2}
-    CC.Thing_S["ĞèÄÚÁ¦ĞÔÖÊ"]={138,0,2}
-    CC.Thing_S["ĞèÄÚÁ¦"]={140,0,2}
+    CC.Thing_S["åŠ æ”»å‡»æ¬¡æ•°"]={132,0,2}
+    CC.Thing_S["åŠ æ”»å‡»å¸¦æ¯’"]={134,0,2}
+    CC.Thing_S["ä»…ä¿®ç‚¼äººç‰©"]={136,0,2}
+    CC.Thing_S["éœ€å†…åŠ›æ€§è´¨"]={138,0,2}
+    CC.Thing_S["éœ€å†…åŠ›"]={140,0,2}
 
-    CC.Thing_S["Ğè¹¥»÷Á¦"]={142,0,2}
-    CC.Thing_S["ĞèÇá¹¦"]={144,0,2}
-    CC.Thing_S["ĞèÓÃ¶¾ÄÜÁ¦"]={146,0,2}
-    CC.Thing_S["ĞèÒ½ÁÆÄÜÁ¦"]={148,0,2}
-    CC.Thing_S["Ğè½â¶¾ÄÜÁ¦"]={150,0,2}
+    CC.Thing_S["éœ€æ”»å‡»åŠ›"]={142,0,2}
+    CC.Thing_S["éœ€è½»åŠŸ"]={144,0,2}
+    CC.Thing_S["éœ€ç”¨æ¯’èƒ½åŠ›"]={146,0,2}
+    CC.Thing_S["éœ€åŒ»ç–—èƒ½åŠ›"]={148,0,2}
+    CC.Thing_S["éœ€è§£æ¯’èƒ½åŠ›"]={150,0,2}
 
-    CC.Thing_S["ĞèÈ­ÕÆ¹¦·ò"]={152,0,2}
-    CC.Thing_S["ĞèÓù½£ÄÜÁ¦"]={154,0,2}
-    CC.Thing_S["ĞèË£µ¶¼¼ÇÉ"]={156,0,2}
-    CC.Thing_S["ĞèÌØÊâ±øÆ÷"]={158,0,2}
-    CC.Thing_S["Ğè°µÆ÷¼¼ÇÉ"]={160,0,2}
+    CC.Thing_S["éœ€æ‹³æŒåŠŸå¤«"]={152,0,2}
+    CC.Thing_S["éœ€å¾¡å‰‘èƒ½åŠ›"]={154,0,2}
+    CC.Thing_S["éœ€è€åˆ€æŠ€å·§"]={156,0,2}
+    CC.Thing_S["éœ€ç‰¹æ®Šå…µå™¨"]={158,0,2}
+    CC.Thing_S["éœ€æš—å™¨æŠ€å·§"]={160,0,2}
 
-    CC.Thing_S["Ğè×ÊÖÊ"]={162,0,2}
-    CC.Thing_S["Ğè¾­Ñé"]={164,0,2}
-    CC.Thing_S["Á·³öÎïÆ·Ğè¾­Ñé"]={166,0,2}
-    CC.Thing_S["Ğè²ÄÁÏ"]={168,0,2}
+    CC.Thing_S["éœ€èµ„è´¨"]={162,0,2}
+    CC.Thing_S["éœ€ç»éªŒ"]={164,0,2}
+    CC.Thing_S["ç»ƒå‡ºç‰©å“éœ€ç»éªŒ"]={166,0,2}
+    CC.Thing_S["éœ€ææ–™"]={168,0,2}
 
       for i=1,5 do
-        CC.Thing_S["Á·³öÎïÆ·" .. i]={170+2*(i-1),0,2};
-        CC.Thing_S["ĞèÒªÎïÆ·ÊıÁ¿" .. i]={180+2*(i-1),0,2};
+        CC.Thing_S["ç»ƒå‡ºç‰©å“" .. i]={170+2*(i-1),0,2};
+        CC.Thing_S["éœ€è¦ç‰©å“æ•°é‡" .. i]={180+2*(i-1),0,2};
      end
 
-    CC.SceneSize=52;   --Ã¿¸ö³¡¾°Êı¾İÕ¼ÓÃ×Ö½Ú
+    CC.SceneSize=52;   --æ¯ä¸ªåœºæ™¯æ•°æ®å ç”¨å­—èŠ‚
     CC.Scene_S={};
-    CC.Scene_S["´úºÅ"]={0,0,2}
-    CC.Scene_S["Ãû³Æ"]={2,2,10}
-    CC.Scene_S["³öÃÅÒôÀÖ"]={12,0,2}
-    CC.Scene_S["½øÃÅÒôÀÖ"]={14,0,2}
-    CC.Scene_S["Ìø×ª³¡¾°"]={16,0,2}
-    CC.Scene_S["½øÈëÌõ¼ş"]={18,0,2}
-    CC.Scene_S["Íâ¾°Èë¿ÚX1"]={20,0,2}
-    CC.Scene_S["Íâ¾°Èë¿ÚY1"]={22,0,2}
-    CC.Scene_S["Íâ¾°Èë¿ÚX2"]={24,0,2}
-    CC.Scene_S["Íâ¾°Èë¿ÚY2"]={26,0,2}
-    CC.Scene_S["Èë¿ÚX"]={28,0,2}
-    CC.Scene_S["Èë¿ÚY"]={30,0,2}
-    CC.Scene_S["³ö¿ÚX1"]={32,0,2}
-    CC.Scene_S["³ö¿ÚX2"]={34,0,2}
-    CC.Scene_S["³ö¿ÚX3"]={36,0,2}
-    CC.Scene_S["³ö¿ÚY1"]={38,0,2}
-    CC.Scene_S["³ö¿ÚY2"]={40,0,2}
-    CC.Scene_S["³ö¿ÚY3"]={42,0,2}
-    CC.Scene_S["Ìø×ª¿ÚX1"]={44,0,2}
-    CC.Scene_S["Ìø×ª¿ÚY1"]={46,0,2}
-    CC.Scene_S["Ìø×ª¿ÚX2"]={48,0,2}
-    CC.Scene_S["Ìø×ª¿ÚY2"]={50,0,2}
+    CC.Scene_S["ä»£å·"]={0,0,2}
+    CC.Scene_S["åç§°"]={2,2,10}
+    CC.Scene_S["å‡ºé—¨éŸ³ä¹"]={12,0,2}
+    CC.Scene_S["è¿›é—¨éŸ³ä¹"]={14,0,2}
+    CC.Scene_S["è·³è½¬åœºæ™¯"]={16,0,2}
+    CC.Scene_S["è¿›å…¥æ¡ä»¶"]={18,0,2}
+    CC.Scene_S["å¤–æ™¯å…¥å£X1"]={20,0,2}
+    CC.Scene_S["å¤–æ™¯å…¥å£Y1"]={22,0,2}
+    CC.Scene_S["å¤–æ™¯å…¥å£X2"]={24,0,2}
+    CC.Scene_S["å¤–æ™¯å…¥å£Y2"]={26,0,2}
+    CC.Scene_S["å…¥å£X"]={28,0,2}
+    CC.Scene_S["å…¥å£Y"]={30,0,2}
+    CC.Scene_S["å‡ºå£X1"]={32,0,2}
+    CC.Scene_S["å‡ºå£X2"]={34,0,2}
+    CC.Scene_S["å‡ºå£X3"]={36,0,2}
+    CC.Scene_S["å‡ºå£Y1"]={38,0,2}
+    CC.Scene_S["å‡ºå£Y2"]={40,0,2}
+    CC.Scene_S["å‡ºå£Y3"]={42,0,2}
+    CC.Scene_S["è·³è½¬å£X1"]={44,0,2}
+    CC.Scene_S["è·³è½¬å£Y1"]={46,0,2}
+    CC.Scene_S["è·³è½¬å£X2"]={48,0,2}
+    CC.Scene_S["è·³è½¬å£Y2"]={50,0,2}
 
-    CC.WugongSize=136;   --Ã¿¸öÎä¹¦Êı¾İÕ¼ÓÃ×Ö½Ú
+    CC.WugongSize=136;   --æ¯ä¸ªæ­¦åŠŸæ•°æ®å ç”¨å­—èŠ‚
     CC.Wugong_S={};
-    CC.Wugong_S["´úºÅ"]={0,0,2}
-    CC.Wugong_S["Ãû³Æ"]={2,2,10}
-    CC.Wugong_S["Î´Öª1"]={12,0,2}
-    CC.Wugong_S["Î´Öª2"]={14,0,2}
-    CC.Wugong_S["Î´Öª3"]={16,0,2}
-    CC.Wugong_S["Î´Öª4"]={18,0,2}
-    CC.Wugong_S["Î´Öª5"]={20,0,2}
-    CC.Wugong_S["³öÕĞÒôĞ§"]={22,0,2}
-    CC.Wugong_S["Îä¹¦ÀàĞÍ"]={24,0,2}
-    CC.Wugong_S["Îä¹¦¶¯»­&ÒôĞ§"]={26,0,2}
-    CC.Wugong_S["ÉËº¦ÀàĞÍ"]={28,0,2}
-    CC.Wugong_S["¹¥»÷·¶Î§"]={30,0,2}
-    CC.Wugong_S["ÏûºÄÄÚÁ¦µãÊı"]={32,0,2}
-    CC.Wugong_S["µĞÈËÖĞ¶¾µãÊı"]={34,0,2}
+    CC.Wugong_S["ä»£å·"]={0,0,2}
+    CC.Wugong_S["åç§°"]={2,2,10}
+    CC.Wugong_S["æœªçŸ¥1"]={12,0,2}
+    CC.Wugong_S["æœªçŸ¥2"]={14,0,2}
+    CC.Wugong_S["æœªçŸ¥3"]={16,0,2}
+    CC.Wugong_S["æœªçŸ¥4"]={18,0,2}
+    CC.Wugong_S["æœªçŸ¥5"]={20,0,2}
+    CC.Wugong_S["å‡ºæ‹›éŸ³æ•ˆ"]={22,0,2}
+    CC.Wugong_S["æ­¦åŠŸç±»å‹"]={24,0,2}
+    CC.Wugong_S["æ­¦åŠŸåŠ¨ç”»&éŸ³æ•ˆ"]={26,0,2}
+    CC.Wugong_S["ä¼¤å®³ç±»å‹"]={28,0,2}
+    CC.Wugong_S["æ”»å‡»èŒƒå›´"]={30,0,2}
+    CC.Wugong_S["æ¶ˆè€—å†…åŠ›ç‚¹æ•°"]={32,0,2}
+    CC.Wugong_S["æ•Œäººä¸­æ¯’ç‚¹æ•°"]={34,0,2}
 
      for i=1,10 do
-        CC.Wugong_S["¹¥»÷Á¦" .. i]={36+2*(i-1),0,2};
-        CC.Wugong_S["ÒÆ¶¯·¶Î§" .. i]={56+2*(i-1),0,2};
-        CC.Wugong_S["É±ÉË·¶Î§" .. i]={76+2*(i-1),0,2};
-        CC.Wugong_S["¼ÓÄÚÁ¦" .. i]={96+2*(i-1),0,2};
-        CC.Wugong_S["É±ÄÚÁ¦" .. i]={116+2*(i-1),0,2};
+        CC.Wugong_S["æ”»å‡»åŠ›" .. i]={36+2*(i-1),0,2};
+        CC.Wugong_S["ç§»åŠ¨èŒƒå›´" .. i]={56+2*(i-1),0,2};
+        CC.Wugong_S["æ€ä¼¤èŒƒå›´" .. i]={76+2*(i-1),0,2};
+        CC.Wugong_S["åŠ å†…åŠ›" .. i]={96+2*(i-1),0,2};
+        CC.Wugong_S["æ€å†…åŠ›" .. i]={116+2*(i-1),0,2};
      end
 
-   CC.ShopSize=30;   --Ã¿¸öĞ¡±¦ÉÌµêÊı¾İÕ¼ÓÃ×Ö½Ú
+   CC.ShopSize=30;   --æ¯ä¸ªå°å®å•†åº—æ•°æ®å ç”¨å­—èŠ‚
    CC.Shop_S={};
    for i=1,5 do
-      CC.Shop_S["ÎïÆ·" .. i]={0+2*(i-1),0,2};
-      CC.Shop_S["ÎïÆ·ÊıÁ¿" .. i]={10+2*(i-1),0,2};
-      CC.Shop_S["ÎïÆ·¼Û¸ñ" .. i]={20+2*(i-1),0,2};
+      CC.Shop_S["ç‰©å“" .. i]={0+2*(i-1),0,2};
+      CC.Shop_S["ç‰©å“æ•°é‡" .. i]={10+2*(i-1),0,2};
+      CC.Shop_S["ç‰©å“ä»·æ ¼" .. i]={20+2*(i-1),0,2};
    end
 
-   CC.ShopScene={};       --Ğ¡±¦ÉÌµê³¡¾°Êı¾İ£¬sceneid ³¡¾°id£¬d_shop Ğ¡±¦Î»ÖÃD*, d_leave Ğ¡±¦Àë¿ªD*£¬Ò»°ãÔÚ³¡¾°³ö¿Ú£¬Â·¹ı´¥·¢
+   CC.ShopScene={};       --å°å®å•†åº—åœºæ™¯æ•°æ®ï¼Œsceneid åœºæ™¯idï¼Œd_shop å°å®ä½ç½®D*, d_leave å°å®ç¦»å¼€D*ï¼Œä¸€èˆ¬åœ¨åœºæ™¯å‡ºå£ï¼Œè·¯è¿‡è§¦å‘
    CC.ShopScene[0]={sceneid=1,d_shop=16,d_leave={17,18}, };
    CC.ShopScene[1]={sceneid=3,d_shop=14,d_leave={15,16}, };
    CC.ShopScene[2]={sceneid=40,d_shop=20,d_leave={21,22}, };
    CC.ShopScene[3]={sceneid=60,d_shop=16,d_leave={17,18}, };
    CC.ShopScene[4]={sceneid=61,d_shop=9,d_leave={10,11,12}, };
 
-  --ÆäËû³£Á¿
-   CC.MWidth=480;       --Ö÷µØÍ¼¿í
-   CC.MHeight=480;      --Ö÷µØÍ¼¸ß
+  --å…¶ä»–å¸¸é‡
+   CC.MWidth=480;       --ä¸»åœ°å›¾å®½
+   CC.MHeight=480;      --ä¸»åœ°å›¾é«˜
 
-   CC.SWidth=64;     --×Ó³¡¾°µØÍ¼´óĞ¡
+   CC.SWidth=64;     --å­åœºæ™¯åœ°å›¾å¤§å°
    CC.SHeight=64;
 
-   CC.DNum=200;       --D*Ã¿¸ö³¡¾°µÄÊÂ¼şÊı
+   CC.DNum=200;       --D*æ¯ä¸ªåœºæ™¯çš„äº‹ä»¶æ•°
 
-   CC.XScale=CONFIG.XScale;    --ÌùÍ¼Ò»°ëµÄ¿í¸ß
+   CC.XScale=CONFIG.XScale;    --è´´å›¾ä¸€åŠçš„å®½é«˜
    CC.YScale=CONFIG.YScale;
 
-   CC.Frame=50;     --Ã¿Ö¡ºÁÃëÊı
-   CC.SceneMoveFrame=CC.Frame*2;           --³¡¾°ÒÆ¶¯Ö¡ËÙ£¬ÓÃÓÚ³¡¾°ÒÆ¶¯ÊÂ¼ş
-   CC.PersonMoveFrame=CC.Frame*2;          --Ö÷½ÇÒÆ¶¯ËÙ¶È£¬ÓÃÓÚÖ÷½ÇÒÆ¶¯ÊÂ¼ş
-   CC.AnimationFrame=CC.Frame*3;           --¶¯»­ÏÔÊ¾Ö¡ËÙ£¬ÓÃÓÚÏÔÊ¾¶¯»­ÊÂ¼ş
+   CC.Frame=50;     --æ¯å¸§æ¯«ç§’æ•°
+   CC.SceneMoveFrame=CC.Frame*2;           --åœºæ™¯ç§»åŠ¨å¸§é€Ÿï¼Œç”¨äºåœºæ™¯ç§»åŠ¨äº‹ä»¶
+   CC.PersonMoveFrame=CC.Frame*2;          --ä¸»è§’ç§»åŠ¨é€Ÿåº¦ï¼Œç”¨äºä¸»è§’ç§»åŠ¨äº‹ä»¶
+   CC.AnimationFrame=CC.Frame*3;           --åŠ¨ç”»æ˜¾ç¤ºå¸§é€Ÿï¼Œç”¨äºæ˜¾ç¤ºåŠ¨ç”»äº‹ä»¶
 
-   CC.WarAutoDelay=300;                   --×Ô¶¯Õ½¶·Ê±ÏÔÊ¾Í·ÏñµÄÑÓÊ±
+   CC.WarAutoDelay=300;                   --è‡ªåŠ¨æˆ˜æ–—æ—¶æ˜¾ç¤ºå¤´åƒçš„å»¶æ—¶
 
-   CC.DirectX={0,1,-1,0};  --²»Í¬·½Ïòx£¬yµÄ¼Ó¼õÖµ£¬ÓÃÓÚ×ßÂ·¸Ä±ä×ø±êÖµ
+   CC.DirectX={0,1,-1,0};  --ä¸åŒæ–¹å‘xï¼Œyçš„åŠ å‡å€¼ï¼Œç”¨äºèµ°è·¯æ”¹å˜åæ ‡å€¼
    CC.DirectY={-1,0,0,1};
 
-   CC.MyStartPic=2501;      --Ö÷½Ç×ßÂ·ÆğÊ¼ÌùÍ¼
-   CC.BoatStartPic=3715;    --´¬ÆğÊ¼ÌùÍ¼
+   CC.MyStartPic=2501;      --ä¸»è§’èµ°è·¯èµ·å§‹è´´å›¾
+   CC.BoatStartPic=3715;    --èˆ¹èµ·å§‹è´´å›¾
 
-   CC.Level=30;                  ---ÈËÎïµÈ¼¶ºÍÃ¿µÈ¼¶¾­Ñé
+   CC.Level=30;                  ---äººç‰©ç­‰çº§å’Œæ¯ç­‰çº§ç»éªŒ
    CC.Exp={    50,    150,     300 ,500   , 750 ,
                1050,  1400,   1800 ,2250  , 2750 ,
                3850,  5050,   6350 ,7750  , 9250 ,
@@ -367,53 +367,53 @@ function SetGlobalConst()
                21400, 24700, 28150 ,31750 , 35500 ,
 	           39400, 43450, 47650 ,52000 , 60000  };
 
-    CC.MMapBoat={};    --Ö÷µØÍ¼´¬¿ÉÒÔ½øÈëµÄÌùÍ¼
+    CC.MMapBoat={};    --ä¸»åœ°å›¾èˆ¹å¯ä»¥è¿›å…¥çš„è´´å›¾
 	local tmpBoat={ {0x166,0x16a},{0x176,0x17c},{0x1ca,0x1d0},{0x1fa,0x262},{0x3f8,0x3fe},};
-    for i,v in ipairs(tmpBoat) do      --°ÑÕâĞ©Êı¾İ±ä»»³ÉÊı×é£¬ÆäÖĞÓĞÖµ¾ÍÊÇ¿ÉÒÔ½øÈë
+    for i,v in ipairs(tmpBoat) do      --æŠŠè¿™äº›æ•°æ®å˜æ¢æˆæ•°ç»„ï¼Œå…¶ä¸­æœ‰å€¼å°±æ˜¯å¯ä»¥è¿›å…¥
         for j=v[1],v[2],2 do
             CC.MMapBoat[j]=1;
         end
     end
 
-    CC.SceneWater={};    --³¡¾°ÈË²»ÄÜ½øÈëµÄÌùÍ¼
+    CC.SceneWater={};    --åœºæ™¯äººä¸èƒ½è¿›å…¥çš„è´´å›¾
     local tmpWater={ {0x166,0x16a},{0x176,0x17c},{0x1ca,0x1d0},{0x1fa,0x262},{0x332,0x338},
                      {0x346,0x346},{0x3a6,0x3a8},{0x3f8,0x3fe},{0x52c,0x544},};
-    for i,v in ipairs(tmpWater) do      --°ÑÕâĞ©Êı¾İ±ä»»³ÉÊı×é£¬ÆäÖĞ¿ÕÏî¾ÍÊÇ¿ÉÒÔ½øÈëµÄÌùÍ¼
+    for i,v in ipairs(tmpWater) do      --æŠŠè¿™äº›æ•°æ®å˜æ¢æˆæ•°ç»„ï¼Œå…¶ä¸­ç©ºé¡¹å°±æ˜¯å¯ä»¥è¿›å…¥çš„è´´å›¾
         for j=v[1],v[2],2 do
             CC.SceneWater[j]=1;
         end
     end
 
-    CC.WarWater={};    --Õ½¶·µØÍ¼ÈË²»ÄÜ½øÈëµÄÌùÍ¼
+    CC.WarWater={};    --æˆ˜æ–—åœ°å›¾äººä¸èƒ½è¿›å…¥çš„è´´å›¾
     local tmpWater={ {0x166,0x16a},{0x176,0x17c},{0x1ca,0x1d0},{0x1fa,0x262},{0x332,0x338},
                      {0x346,0x346},{0x3a6,0x3a8},{0x3f8,0x3fe},{0x52c,0x544},};
-    for i,v in ipairs(tmpWater) do      --°ÑÕâĞ©Êı¾İ±ä»»³ÉÊı×é£¬ÆäÖĞ¿ÕÏî¾ÍÊÇ¿ÉÒÔ½øÈëµÄÌùÍ¼
+    for i,v in ipairs(tmpWater) do      --æŠŠè¿™äº›æ•°æ®å˜æ¢æˆæ•°ç»„ï¼Œå…¶ä¸­ç©ºé¡¹å°±æ˜¯å¯ä»¥è¿›å…¥çš„è´´å›¾
         for j=v[1],v[2],2 do
             CC.WarWater[j]=1;
         end
     end
 
 
-    --Àë¶ÓÈËÔ±ÁĞ±í: {ÈËÔ±id£¬Àë¶Óµ÷ÓÃº¯Êı}      ----Èç¹ûÓĞĞÂµÄÀë¶ÓÈËÔ±¼ÓÈë£¬Ö±½ÓÔÚÕâÀïÔö¼Ó
+    --ç¦»é˜Ÿäººå‘˜åˆ—è¡¨: {äººå‘˜idï¼Œç¦»é˜Ÿè°ƒç”¨å‡½æ•°}      ----å¦‚æœæœ‰æ–°çš„ç¦»é˜Ÿäººå‘˜åŠ å…¥ï¼Œç›´æ¥åœ¨è¿™é‡Œå¢åŠ 
     CC.PersonExit={{1,950},{2,952},{9,954},{16,956},{17,958},
                    {25,960},{28,962},{29,964},{35,966},{36,968},
                    {37,970},{38,972},{44,974},{45,976},{47,978},
                    {48,980},{49,982},{51,984},{53,986},{54,988},
                    {58,990},{59,992},{61,994},{63,996},{76,998},  }
 
-    --ËùÓĞ¿É¼ÓÈëÈËÔ±Àë¶ÓĞèÒªÇå³ıµÄD*ÊÂ¼ş£¬Çå³ıºóÕâĞ©ÈË¾ÍÕÒ²»µ½ÁË¡£µÃµ½ÎäÁÖÌûÖ¸ÁîÊ¹ÓÃ
+    --æ‰€æœ‰å¯åŠ å…¥äººå‘˜ç¦»é˜Ÿéœ€è¦æ¸…é™¤çš„D*äº‹ä»¶ï¼Œæ¸…é™¤åè¿™äº›äººå°±æ‰¾ä¸åˆ°äº†ã€‚å¾—åˆ°æ­¦æ—å¸–æŒ‡ä»¤ä½¿ç”¨
     CC.AllPersonExit={ {0,0},{49,2},{4,1},{44,0},{44,1},{37,5},{30,0},{59,0},{40,3},{56,1},{1,7},{1,8},{1,10},
                        {40,7},{40,8},{77,0},{54,0},{62,3},{62,4},{60,2},{60,15},{52,1},{61,0},{61,8},{78,0},
                        {18,0},{18,1},{69,0},{69,1},{45,0},{52,2},{42,6},{42,7},{8,8},{7,6},{80,1}, };
 
-    CC.BookNum=14;               --ÌìÊé¸öÊı
-    CC.BookStart=144;            --14ÌìÊéÆğÊ¼ÎïÆ·id
+    CC.BookNum=14;               --å¤©ä¹¦ä¸ªæ•°
+    CC.BookStart=144;            --14å¤©ä¹¦èµ·å§‹ç‰©å“id
 
-    CC.MoneyID=174;              --½ğÇ®ÎïÆ·id
+    CC.MoneyID=174;              --é‡‘é’±ç‰©å“id
 
-    CC.Shemale={ [78]=1,[93]=1}   --ĞèÒª×Ô¹¬µÄÊéµÄid
+    CC.Shemale={ [78]=1,[93]=1}   --éœ€è¦è‡ªå®«çš„ä¹¦çš„id
 
-   CC.Effect={[0]=9,14,17,9,13,                    --eft.idx/grpÌùÍ¼¸÷¸öÎä¹¦Ğ§¹ûÌùÍ¼¸öÊı
+   CC.Effect={[0]=9,14,17,9,13,                    --eft.idx/grpè´´å›¾å„ä¸ªæ­¦åŠŸæ•ˆæœè´´å›¾ä¸ªæ•°
                  17,17,17,18,19,
                  19,15,13,10,10,
                  15,21,16,9,11,
@@ -425,7 +425,7 @@ function SetGlobalConst()
                  16,13,18,14,17,
                  17,16,7,   };
 
-    CC.ExtraOffense={{106,57,100},             --Îä¹¦ÎäÆ÷ÅäºÏÔö¼Ó¹¥»÷Á¦£¬ ÒÀ´ÎÎª£ºÎäÆ÷ÎïÆ·id£¬Îä¹¦id£¬¹¥»÷Á¦Ôö¼Ó
+    CC.ExtraOffense={{106,57,100},             --æ­¦åŠŸæ­¦å™¨é…åˆå¢åŠ æ”»å‡»åŠ›ï¼Œ ä¾æ¬¡ä¸ºï¼šæ­¦å™¨ç‰©å“idï¼Œæ­¦åŠŸidï¼Œæ”»å‡»åŠ›å¢åŠ 
                    {107,49,50},
                    {108,49,50},
                    {110,54,80},
@@ -433,88 +433,88 @@ function SetGlobalConst()
                    {116,67,70},
                    {119,68,100},}
 
-    CC.NewPersonName="ĞìĞ¡ÏÀ";                --ĞÂÓÎÏ·µÄÊı¾İ
-    CC.NewGameSceneID=70;                      --³¡¾°ID
-    CC.NewGameSceneX=19;                       --³¡¾°×ø±ê
+    CC.NewPersonName="å¾å°ä¾ ";                --æ–°æ¸¸æˆçš„æ•°æ®
+    CC.NewGameSceneID=70;                      --åœºæ™¯ID
+    CC.NewGameSceneX=19;                       --åœºæ™¯åæ ‡
     CC.NewGameSceneY=20;
-    CC.NewGameEvent=691;                       --ĞÂÓÎÏ·³¡¾°Ö´ĞĞÊÂ¼ş¡£Èç¹ûÃ»ÓĞ£¬Ôò¿´ĞÂÓÎÏ·×ø±êºóÃæÓĞÃ»ÓĞÊÂ¼ş¡£
-    CC.NewPersonPic=3445;                      --¿ªÊ¼Ö÷½Çpic
+    CC.NewGameEvent=691;                       --æ–°æ¸¸æˆåœºæ™¯æ‰§è¡Œäº‹ä»¶ã€‚å¦‚æœæ²¡æœ‰ï¼Œåˆ™çœ‹æ–°æ¸¸æˆåæ ‡åé¢æœ‰æ²¡æœ‰äº‹ä»¶ã€‚
+    CC.NewPersonPic=3445;                      --å¼€å§‹ä¸»è§’pic
 
-   CC.PersonAttribMax={};             --ÈËÎïÊôĞÔ×î´óÖµ
-   CC.PersonAttribMax["¾­Ñé"]=60000;
-   CC.PersonAttribMax["ÎïÆ·ĞŞÁ¶µãÊı"]=60000;
-   CC.PersonAttribMax["ĞŞÁ¶µãÊı"]=60000;
-   CC.PersonAttribMax["ÉúÃü×î´óÖµ"]=999;
-   CC.PersonAttribMax["ÊÜÉË³Ì¶È"]=100;
-   CC.PersonAttribMax["ÖĞ¶¾³Ì¶È"]=100;
-   CC.PersonAttribMax["ÄÚÁ¦×î´óÖµ"]=999;
-   CC.PersonAttribMax["ÌåÁ¦"]=100;
-   CC.PersonAttribMax["¹¥»÷Á¦"]=100;
-   CC.PersonAttribMax["·ÀÓùÁ¦"]=100;
-   CC.PersonAttribMax["Çá¹¦"]=100;
-   CC.PersonAttribMax["Ò½ÁÆÄÜÁ¦"]=100;
-   CC.PersonAttribMax["ÓÃ¶¾ÄÜÁ¦"]=100;
-   CC.PersonAttribMax["½â¶¾ÄÜÁ¦"]=100;
-   CC.PersonAttribMax["¿¹¶¾ÄÜÁ¦"]=100;
-   CC.PersonAttribMax["È­ÕÆ¹¦·ò"]=100;
-   CC.PersonAttribMax["Óù½£ÄÜÁ¦"]=100;
-   CC.PersonAttribMax["Ë£µ¶¼¼ÇÉ"]=100;
-   CC.PersonAttribMax["ÌØÊâ±øÆ÷"]=100;
-   CC.PersonAttribMax["°µÆ÷¼¼ÇÉ"]=100;
-   CC.PersonAttribMax["ÎäÑ§³£Ê¶"]=100;
-   CC.PersonAttribMax["Æ·µÂ"]=100;
-   CC.PersonAttribMax["×ÊÖÊ"]=100;
-   CC.PersonAttribMax["¹¥»÷´ø¶¾"]=100;
+   CC.PersonAttribMax={};             --äººç‰©å±æ€§æœ€å¤§å€¼
+   CC.PersonAttribMax["ç»éªŒ"]=60000;
+   CC.PersonAttribMax["ç‰©å“ä¿®ç‚¼ç‚¹æ•°"]=60000;
+   CC.PersonAttribMax["ä¿®ç‚¼ç‚¹æ•°"]=60000;
+   CC.PersonAttribMax["ç”Ÿå‘½æœ€å¤§å€¼"]=999;
+   CC.PersonAttribMax["å—ä¼¤ç¨‹åº¦"]=100;
+   CC.PersonAttribMax["ä¸­æ¯’ç¨‹åº¦"]=100;
+   CC.PersonAttribMax["å†…åŠ›æœ€å¤§å€¼"]=999;
+   CC.PersonAttribMax["ä½“åŠ›"]=100;
+   CC.PersonAttribMax["æ”»å‡»åŠ›"]=100;
+   CC.PersonAttribMax["é˜²å¾¡åŠ›"]=100;
+   CC.PersonAttribMax["è½»åŠŸ"]=100;
+   CC.PersonAttribMax["åŒ»ç–—èƒ½åŠ›"]=100;
+   CC.PersonAttribMax["ç”¨æ¯’èƒ½åŠ›"]=100;
+   CC.PersonAttribMax["è§£æ¯’èƒ½åŠ›"]=100;
+   CC.PersonAttribMax["æŠ—æ¯’èƒ½åŠ›"]=100;
+   CC.PersonAttribMax["æ‹³æŒåŠŸå¤«"]=100;
+   CC.PersonAttribMax["å¾¡å‰‘èƒ½åŠ›"]=100;
+   CC.PersonAttribMax["è€åˆ€æŠ€å·§"]=100;
+   CC.PersonAttribMax["ç‰¹æ®Šå…µå™¨"]=100;
+   CC.PersonAttribMax["æš—å™¨æŠ€å·§"]=100;
+   CC.PersonAttribMax["æ­¦å­¦å¸¸è¯†"]=100;
+   CC.PersonAttribMax["å“å¾·"]=100;
+   CC.PersonAttribMax["èµ„è´¨"]=100;
+   CC.PersonAttribMax["æ”»å‡»å¸¦æ¯’"]=100;
 
-    CC.WarDataSize=186;         --Õ½¶·Êı¾İ´óĞ¡  war.staÊı¾İ½á¹¹
-    CC.WarData_S={};        --Õ½¶·Êı¾İ½á¹¹
-    CC.WarData_S["´úºÅ"]={0,0,2};
-    CC.WarData_S["Ãû³Æ"]={2,2,10};
-    CC.WarData_S["µØÍ¼"]={12,0,2};
-    CC.WarData_S["¾­Ñé"]={14,0,2};
-    CC.WarData_S["ÒôÀÖ"]={16,0,2};
+    CC.WarDataSize=186;         --æˆ˜æ–—æ•°æ®å¤§å°  war.staæ•°æ®ç»“æ„
+    CC.WarData_S={};        --æˆ˜æ–—æ•°æ®ç»“æ„
+    CC.WarData_S["ä»£å·"]={0,0,2};
+    CC.WarData_S["åç§°"]={2,2,10};
+    CC.WarData_S["åœ°å›¾"]={12,0,2};
+    CC.WarData_S["ç»éªŒ"]={14,0,2};
+    CC.WarData_S["éŸ³ä¹"]={16,0,2};
     for i=1,6 do
-        CC.WarData_S["ÊÖ¶¯Ñ¡Ôñ²ÎÕ½ÈË"  .. i]={18+(i-1)*2,0,2};
-        CC.WarData_S["×Ô¶¯Ñ¡Ôñ²ÎÕ½ÈË"  .. i]={30+(i-1)*2,0,2};
-        CC.WarData_S["ÎÒ·½X"  .. i]={42+(i-1)*2,0,2};
-        CC.WarData_S["ÎÒ·½Y"  .. i]={54+(i-1)*2,0,2};
+        CC.WarData_S["æ‰‹åŠ¨é€‰æ‹©å‚æˆ˜äºº"  .. i]={18+(i-1)*2,0,2};
+        CC.WarData_S["è‡ªåŠ¨é€‰æ‹©å‚æˆ˜äºº"  .. i]={30+(i-1)*2,0,2};
+        CC.WarData_S["æˆ‘æ–¹X"  .. i]={42+(i-1)*2,0,2};
+        CC.WarData_S["æˆ‘æ–¹Y"  .. i]={54+(i-1)*2,0,2};
     end
     for i=1,20 do
-        CC.WarData_S["µĞÈË"  .. i]={66+(i-1)*2,0,2};
-        CC.WarData_S["µĞ·½X"  .. i]={106+(i-1)*2,0,2};
-        CC.WarData_S["µĞ·½Y"  .. i]={146+(i-1)*2,0,2};
+        CC.WarData_S["æ•Œäºº"  .. i]={66+(i-1)*2,0,2};
+        CC.WarData_S["æ•Œæ–¹X"  .. i]={106+(i-1)*2,0,2};
+        CC.WarData_S["æ•Œæ–¹Y"  .. i]={146+(i-1)*2,0,2};
     end
 
-    CC.WarWidth=64;        --Õ½¶·µØÍ¼´óĞ¡
+    CC.WarWidth=64;        --æˆ˜æ–—åœ°å›¾å¤§å°
     CC.WarHeight=64;
 
-	--ÏÔÊ¾Ö÷µØÍ¼ºÍ³¡¾°µØÍ¼×ø±ê
-	--Èç¹ûÏÔÊ¾×ø±ê£¬Ôò»áÔö¼ÓcpuÕ¼ÓÃ¡£»úÆ÷ËÙ¶ÈÂıµÄ»°¿ÉÄÜ»á¿¨¡£Õâ¸öÔÚµ÷ÊÔÊ±ÓĞÓÃ¡£
-	--×¢Òâ: Èç¹ûÉèÖÃÁËCONFIG.FastShowScreen=1£¬Ôò³¡¾°ÊÓ½Ç·¶Î§³¬³öºóÏÔÊ¾µÄ×ø±ê²»ÕıÈ·¡£
-	CC.ShowXY=0      --0 ²»ÏÔÊ¾ 1 ÏÔÊ¾
+	--æ˜¾ç¤ºä¸»åœ°å›¾å’Œåœºæ™¯åœ°å›¾åæ ‡
+	--å¦‚æœæ˜¾ç¤ºåæ ‡ï¼Œåˆ™ä¼šå¢åŠ cpuå ç”¨ã€‚æœºå™¨é€Ÿåº¦æ…¢çš„è¯å¯èƒ½ä¼šå¡ã€‚è¿™ä¸ªåœ¨è°ƒè¯•æ—¶æœ‰ç”¨ã€‚
+	--æ³¨æ„: å¦‚æœè®¾ç½®äº†CONFIG.FastShowScreen=1ï¼Œåˆ™åœºæ™¯è§†è§’èŒƒå›´è¶…å‡ºåæ˜¾ç¤ºçš„åæ ‡ä¸æ­£ç¡®ã€‚
+	CC.ShowXY=0      --0 ä¸æ˜¾ç¤º 1 æ˜¾ç¤º
 
-	--ÒÔÏÂÎª¿ØÖÆÏÔÊ¾·½Ê½µÄ²ÎÊı
+	--ä»¥ä¸‹ä¸ºæ§åˆ¶æ˜¾ç¤ºæ–¹å¼çš„å‚æ•°
 
-	CC.RowPixel=4         -- Ã¿ĞĞ×ÖµÄ¼ä¾àÏñËØÊı
+	CC.RowPixel=4         -- æ¯è¡Œå­—çš„é—´è·åƒç´ æ•°
 
-	CC.MenuBorderPixel=5  -- ²Ëµ¥ËÄÖÜ±ß¿òÁôµÄÏñËØÊı£¬Ò²ÓÃÓÚ»æÖÆ×Ö·û´®µÄboxËÄÖÜÁôµÃÏñËØ
+	CC.MenuBorderPixel=5  -- èœå•å››å‘¨è¾¹æ¡†ç•™çš„åƒç´ æ•°ï¼Œä¹Ÿç”¨äºç»˜åˆ¶å­—ç¬¦ä¸²çš„boxå››å‘¨ç•™å¾—åƒç´ 
 
-	if CONFIG.Type==0 then      --320*240ÏÔÊ¾·½Ê½
+	if CONFIG.Type==0 then      --320*240æ˜¾ç¤ºæ–¹å¼
 		CC.DefaultFont=16
 
-		CC.StartMenuFontSize=16  --¿ªÊ¼²Ëµ¥×ÖºÅ
+		CC.StartMenuFontSize=16  --å¼€å§‹èœå•å­—å·
 
-		CC.NewGameFontSize =16   --ĞÂÓÎÏ·ÊôĞÔÑ¡Ôñ×ÖºÅ
+		CC.NewGameFontSize =16   --æ–°æ¸¸æˆå±æ€§é€‰æ‹©å­—å·
 
-		CC.MainMenuX=10;         --Ö÷²Ëµ¥¿ªÊ¼×ø±ê
+		CC.MainMenuX=10;         --ä¸»èœå•å¼€å§‹åæ ‡
 		CC.MainMenuY=10;
 
 		CC.GameOverX=90;
 		CC.GameOverY=65;
 
-        CC.PersonStateRowPixel= 1;    --ÏÔÊ¾ÈËÎï×´Ì¬ĞĞ¼ä¾àÏñËØ
+        CC.PersonStateRowPixel= 1;    --æ˜¾ç¤ºäººç‰©çŠ¶æ€è¡Œé—´è·åƒç´ 
 
-	elseif CONFIG.Type==1 then  --640*480ÏÔÊ¾·½Ê½
+	elseif CONFIG.Type==1 then  --640*480æ˜¾ç¤ºæ–¹å¼
 		CC.DefaultFont=24;
 
 		CC.StartMenuFontSize=32;
@@ -527,52 +527,52 @@ function SetGlobalConst()
 		CC.GameOverX=255;
 		CC.GameOverY=165;
 
-        CC.PersonStateRowPixel= 4;  --ÏÔÊ¾ÈËÎï×´Ì¬ĞĞ¼ä¾àÏñËØ
+        CC.PersonStateRowPixel= 4;  --æ˜¾ç¤ºäººç‰©çŠ¶æ€è¡Œé—´è·åƒç´ 
 
 	end
 
     CC.StartMenuY=CC.ScreenH-3*(CC.StartMenuFontSize+CC.RowPixel)-20;
 	CC.NewGameY=CC.ScreenH-4*(CC.NewGameFontSize+CC.RowPixel)-10;
 
-	--×Ó²Ëµ¥µÄ¿ªÊ¼×ø±ê
-	CC.MainSubMenuX=CC.MainMenuX+2*CC.MenuBorderPixel+2*CC.DefaultFont+5;       --Ö÷²Ëµ¥ÎªÁ½¸öºº×Ö
+	--å­èœå•çš„å¼€å§‹åæ ‡
+	CC.MainSubMenuX=CC.MainMenuX+2*CC.MenuBorderPixel+2*CC.DefaultFont+5;       --ä¸»èœå•ä¸ºä¸¤ä¸ªæ±‰å­—
 	CC.MainSubMenuY=CC.MainMenuY;
 
-	--¶ş¼¶×Ó²Ëµ¥¿ªÊ¼×ø±ê
-	CC.MainSubMenuX2=CC.MainSubMenuX+2*CC.MenuBorderPixel+4*CC.DefaultFont+5;   --×Ó²Ëµ¥ÎªËÄ¸ö×Ö·û
+	--äºŒçº§å­èœå•å¼€å§‹åæ ‡
+	CC.MainSubMenuX2=CC.MainSubMenuX+2*CC.MenuBorderPixel+4*CC.DefaultFont+5;   --å­èœå•ä¸ºå››ä¸ªå­—ç¬¦
 
-	CC.SingleLineHeight=CC.DefaultFont+2*CC.MenuBorderPixel+5;  --´ø¿òµÄµ¥ĞĞ×Ö·û¸ß
+	CC.SingleLineHeight=CC.DefaultFont+2*CC.MenuBorderPixel+5;  --å¸¦æ¡†çš„å•è¡Œå­—ç¬¦é«˜
 
-	------------------------ÒÔÏÂÎªÎïÆ·²Ëµ¥²ÎÊı
+	------------------------ä»¥ä¸‹ä¸ºç‰©å“èœå•å‚æ•°
 	if CONFIG.Type==0 then
 		CC.ThingFontSize = 16;
 
-		CC.ThingPicWidth=40;    --ÎïÆ·Í¼Æ¬¿í¸ß
+		CC.ThingPicWidth=40;    --ç‰©å“å›¾ç‰‡å®½é«˜
 		CC.ThingPicHeight=40;
 
-		CC.MenuThingXnum=5      --Ò»ĞĞÏÔÊ¾¼¸¸öÎïÆ·
-		CC.MenuThingYnum=3      --ÎïÆ·ÏÔÊ¾¼¸ÁĞ
+		CC.MenuThingXnum=5      --ä¸€è¡Œæ˜¾ç¤ºå‡ ä¸ªç‰©å“
+		CC.MenuThingYnum=3      --ç‰©å“æ˜¾ç¤ºå‡ åˆ—
 
-		CC.ThingGapOut=10;      --ÎïÆ·Í¼ÏñÏÔÊ¾ËÄÖÜÁô°×
-		CC.ThingGapIn=5;        --ÎïÆ·Í¼ÏñÏÔÊ¾ÖĞ¼ä¼ä¸ô
+		CC.ThingGapOut=10;      --ç‰©å“å›¾åƒæ˜¾ç¤ºå››å‘¨ç•™ç™½
+		CC.ThingGapIn=5;        --ç‰©å“å›¾åƒæ˜¾ç¤ºä¸­é—´é—´éš”
 
 	elseif CONFIG.Type==1 then
 
 		CC.ThingFontSize = 24;  --
 
-		CC.ThingPicWidth=40;    --ÎïÆ·Í¼Æ¬¿í¸ß
+		CC.ThingPicWidth=40;    --ç‰©å“å›¾ç‰‡å®½é«˜
 		CC.ThingPicHeight=40;
 
-		CC.MenuThingXnum=10      --Ò»ĞĞÏÔÊ¾¼¸¸öÎïÆ·
-		CC.MenuThingYnum=5      --ÎïÆ·ÏÔÊ¾¼¸ÁĞ
+		CC.MenuThingXnum=10      --ä¸€è¡Œæ˜¾ç¤ºå‡ ä¸ªç‰©å“
+		CC.MenuThingYnum=5      --ç‰©å“æ˜¾ç¤ºå‡ åˆ—
 
-		CC.ThingGapOut=10;      --ÎïÆ·Í¼ÏñÏÔÊ¾ËÄÖÜÁô°×
-		CC.ThingGapIn=10;        --ÎïÆ·Í¼ÏñÏÔÊ¾ÖĞ¼ä¼ä¸ô
+		CC.ThingGapOut=10;      --ç‰©å“å›¾åƒæ˜¾ç¤ºå››å‘¨ç•™ç™½
+		CC.ThingGapIn=10;        --ç‰©å“å›¾åƒæ˜¾ç¤ºä¸­é—´é—´éš”
 	end
 
 
-    --³¡¾°ÊÓ½Ç·¶Î§¡£³¬³ö´Ë·¶Î§ÔòÖ»ÒÆ¶¯Ö÷½Ç£¬³¡¾°²»ÒÆ¶¯ÁË¡£Ò²¾ÍÊÇÖ÷½Ç²»ÔÚÆÁÄ»ÖĞÑëÁË
-	if CONFIG.Type==0 then      --320*240ÏÔÊ¾·½Ê½
+    --åœºæ™¯è§†è§’èŒƒå›´ã€‚è¶…å‡ºæ­¤èŒƒå›´åˆ™åªç§»åŠ¨ä¸»è§’ï¼Œåœºæ™¯ä¸ç§»åŠ¨äº†ã€‚ä¹Ÿå°±æ˜¯ä¸»è§’ä¸åœ¨å±å¹•ä¸­å¤®äº†
+	if CONFIG.Type==0 then      --320*240æ˜¾ç¤ºæ–¹å¼
         CC.SceneXMin=12
         CC.SceneYMin=12
         CC.SceneXMax=45;
@@ -584,12 +584,12 @@ function SetGlobalConst()
         CC.SceneYMax=47;
 	end
 
-	CC.SceneFlagPic={2749,2846}    --³¡¾°ÌùÍ¼ÖĞÆìÖÄµÄÌùÍ¼±àºÅ¡£
+	CC.SceneFlagPic={2749,2846}    --åœºæ™¯è´´å›¾ä¸­æ——å¸œçš„è´´å›¾ç¼–å·ã€‚
 
 	if CONFIG.FastShowScreen==0 then
-        CC.ShowFlag=1;                 --0 ²»ÏÔÊ¾ÆìÖÄ¶¯»­ 1 ÏÔÊ¾¡£²»ÏÔÊ¾ÆìÖÄ¶¯»­¿ÉÒÔÔö¼Ó³¡¾°ÖĞÖ÷½Ç²»¶¯Ê±µÄÏÔÊ¾ËÙ¶È
+        CC.ShowFlag=1;                 --0 ä¸æ˜¾ç¤ºæ——å¸œåŠ¨ç”» 1 æ˜¾ç¤ºã€‚ä¸æ˜¾ç¤ºæ——å¸œåŠ¨ç”»å¯ä»¥å¢åŠ åœºæ™¯ä¸­ä¸»è§’ä¸åŠ¨æ—¶çš„æ˜¾ç¤ºé€Ÿåº¦
 		if CONFIG.Type==1 then
-            CC.AutoWarShowHead=1;          --1 Õ½¶·Ê±Ò»Ö±ÏÔÊ¾Í·Ïñ 0 ²»ÏÔÊ¾¡£Èç¹ûÉèÎª1£¬ÔòÕ½¶·Ê±½«ÖØ»æÕû¸öÆÁÄ»£¬»á½µµÍÏÔÊ¾ËÙ¶È¡£
+            CC.AutoWarShowHead=1;          --1 æˆ˜æ–—æ—¶ä¸€ç›´æ˜¾ç¤ºå¤´åƒ 0 ä¸æ˜¾ç¤ºã€‚å¦‚æœè®¾ä¸º1ï¼Œåˆ™æˆ˜æ–—æ—¶å°†é‡ç»˜æ•´ä¸ªå±å¹•ï¼Œä¼šé™ä½æ˜¾ç¤ºé€Ÿåº¦ã€‚
 		else
 		    CC.AutoWarShowHead=0;
 		end
@@ -598,8 +598,8 @@ function SetGlobalConst()
 		CC.AutoWarShowHead=0;
 	end
 
-    CC.LoadThingPic=1           --¶ÁÈ¡ÎïÆ·ÌùÍ¼·½Ê½ 0 ´Ómmap/smap/wmapÖĞ¶ÁÈ¡  1 ¶ÁÈ¡¶ÀÁ¢µÄthing.idx/grp
-	CC.StartThingPic=0          --ÎïÆ·ÌùÍ¼ÔÚmmap/smap/wmapÖĞµÄÆğÊ¼±àºÅ¡£CC.LoadThingPic=0ÓĞĞ§
+    CC.LoadThingPic=1           --è¯»å–ç‰©å“è´´å›¾æ–¹å¼ 0 ä»mmap/smap/wmapä¸­è¯»å–  1 è¯»å–ç‹¬ç«‹çš„thing.idx/grp
+	CC.StartThingPic=0          --ç‰©å“è´´å›¾åœ¨mmap/smap/wmapä¸­çš„èµ·å§‹ç¼–å·ã€‚CC.LoadThingPic=0æœ‰æ•ˆ
 
 
 end

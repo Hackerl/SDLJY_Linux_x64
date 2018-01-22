@@ -1,12 +1,12 @@
 
---×ª»»fishedit Êä³öµÄkdefout.txtÎªluaº¯Êı¡£
---¶ÔÀïÃæµÄËùÓĞÊÂ¼ş½øĞĞ½âÎö¡£Ã¿¸öÊÂ¼şÉú³ÉÒ»¸öº¯Êı£ºÃû×ÖÎª oldevent_238();
---ÔİÊ±Ö»´¦Àí±ê×¼Ö¸Áî£¬Ö¸Áîº¯ÊıÃû×ÖÎª instruct_23(xxx);
+--è½¬æ¢fishedit è¾“å‡ºçš„kdefout.txtä¸ºluaå‡½æ•°ã€‚
+--å¯¹é‡Œé¢çš„æ‰€æœ‰äº‹ä»¶è¿›è¡Œè§£æã€‚æ¯ä¸ªäº‹ä»¶ç”Ÿæˆä¸€ä¸ªå‡½æ•°ï¼šåå­—ä¸º oldevent_238();
+--æš‚æ—¶åªå¤„ç†æ ‡å‡†æŒ‡ä»¤ï¼ŒæŒ‡ä»¤å‡½æ•°åå­—ä¸º instruct_23(xxx);
 labellevel=0;
 
---Ö¸Áî½âÎö
+--æŒ‡ä»¤è§£æ
 function gen_instruct(k)
-    local i,j=string.find(line[k],"ËµÃ÷£º")
+    local i,j=string.find(line[k],"è¯´æ˜ï¼š")
     local note=string.sub(line[k],j+1);
     local instruct=string.sub(line[k],1,i-1);
     local data={};
@@ -31,12 +31,12 @@ function gen_instruct(k)
         else
             local jump=0;
             local value="";
-            local i,j=string.find(note,"ÊÇÔòÌø×ªµ½");
+            local i,j=string.find(note,"æ˜¯åˆ™è·³è½¬åˆ°");
             if i~=nil then
                 jump=1;
                 value="false";
             end
-            local i,j=string.find(note,"·ñÔòÌø×ªµ½");
+            local i,j=string.find(note,"å¦åˆ™è·³è½¬åˆ°");
             if i~=nil then
                 jump=2;
                 value="true"
@@ -96,9 +96,9 @@ end
 
     outp=io.open("kdefnew.lua","w");
     for k=0,n-1 do
-        local i,j=string.find(line[k],"ÊÂ¼ş[+-]?%d+");
-        if i==1 then          --µÚÒ»¸öÎ»ÖÃ
-            local i,j=string.find(line[k],"[+-]?%d+");      --Æ¥ÅäÊı×Ö
+        local i,j=string.find(line[k],"äº‹ä»¶[+-]?%d+");
+        if i==1 then          --ç¬¬ä¸€ä¸ªä½ç½®
+            local i,j=string.find(line[k],"[+-]?%d+");      --åŒ¹é…æ•°å­—
 			outp:close();
             outp=io.open(string.format("oldevent\\oldevent_%d.lua",tonumber(string.sub(line[k],i,j))),"w");
             outp:write(string.format("--function oldevent_%d()\n",tonumber(string.sub(line[k],i,j))));
@@ -120,12 +120,12 @@ end
             break;
         end
         if #s>0 then
-            local i,j=string.find(s,"[+-]?%d+");      --Æ¥ÅäÊı×Ö
+            local i,j=string.find(s,"[+-]?%d+");      --åŒ¹é…æ•°å­—
             local id=tonumber(string.sub(s,i,j))
-            i,j=string.find(s,'"%x+",',j+1);        --Æ¥Åä´øÒıºÅµÄÊı×Ö
-            i,j=string.find(s,'".*"',j+1);          --Æ¥Åä×îºóµÄ×Ö·û´®
+            i,j=string.find(s,'"%x+",',j+1);        --åŒ¹é…å¸¦å¼•å·çš„æ•°å­—
+            i,j=string.find(s,'".*"',j+1);          --åŒ¹é…æœ€åçš„å­—ç¬¦ä¸²
             local talk=string.sub(s,i+1,j-1)
-			local newtalk=string.gsub(talk,'""','"');           --°Ñ×Ö·û´®ÖĞµÄ""Ìæ»»³É"
+			local newtalk=string.gsub(talk,'""','"');           --æŠŠå­—ç¬¦ä¸²ä¸­çš„""æ›¿æ¢æˆ"
             outp:write(string.format('%s\n',newtalk));
         end
     end

@@ -151,28 +151,6 @@ int HAPI_Debug(lua_State *pL)
 }
 
 
-int HAPI_CharSet(lua_State *pL)
-{
-    size_t length;
-	const char *src=lua_tostring(pL,1);
-	int flag=(int)lua_tonumber(pL,2);
-    char *dest;
-
-	length =strlen(src);
-
-    dest=(char*)malloc(length+2);
-
-    JY_CharSet(src,dest,flag);
-
-    lua_pushstring(pL,dest);
-
-	SafeFree(dest);
-
-	return 1;
-}
-
-
-
 int HAPI_SetClip(lua_State *pL)
 {
  

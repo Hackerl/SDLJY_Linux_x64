@@ -1,63 +1,63 @@
 
 
 
----±¾Ä£¿é´æ·Å¶ÔJYMain.lua µÄĞŞ¸ÄºÍÀ©³ä¡£
+---æœ¬æ¨¡å—å­˜æ”¾å¯¹JYMain.lua çš„ä¿®æ”¹å’Œæ‰©å……ã€‚
 
---¾¡Á¿°ÑĞÂÔö¼ÓÄ£¿é·ÅÔÚÕâÀï£¬ÉÙĞŞ¸ÄÔ­Ê¼JYMain.LuaÎÄ¼ş¡£
---ÕâÀïÒ»°ã°üÀ¨ÒÔÏÂ¼¸¸ö²¿·Ö
---1. SetModifyº¯Êı¡£   ¸Ãº¯ÊıÔÚÓÎÏ·¿ªÊ¼Ê±µ÷ÓÃ£¬¿ÉÒÔÔÚ´ËĞŞ¸ÄÔ­ÓĞµÄÊı¾İ£¬ÒÔ¼°ÖØ¶¨ÒåÔ­ÓĞµÄº¯Êı£¬ÒÔÊµÏÖ¶ÔÔ­ÓĞº¯ÊıµÄĞŞ¸Ä¡¢
---                    ÕâÑù¾Í¿ÉÒÔ»ù±¾²»¶¯Ô­Ê¼µÄº¯Êı
---2. Ô­ÓĞº¯ÊıµÄÖØÔØº¯Êı¡£ SetModifyÖĞÖØÔØµÄº¯Êı·ÅÔÚ´Ë´¦¡£¾¡Á¿²»ĞŞ¸ÄJYMain.luaÎÄ¼ş£¬¶ÔËüµÄĞŞ¸Ä²ÉÓÃÖØ¶¨Òåº¯ÊıµÄĞÎÊ½¡£
---3. ĞÂµÄÎïÆ·Ê¹ÓÃº¯Êı¡£
---4. ĞÂµÄ³¡¾°ÊÂ¼şº¯Êı¡£
-
-
+--å°½é‡æŠŠæ–°å¢åŠ æ¨¡å—æ”¾åœ¨è¿™é‡Œï¼Œå°‘ä¿®æ”¹åŸå§‹JYMain.Luaæ–‡ä»¶ã€‚
+--è¿™é‡Œä¸€èˆ¬åŒ…æ‹¬ä»¥ä¸‹å‡ ä¸ªéƒ¨åˆ†
+--1. SetModifyå‡½æ•°ã€‚   è¯¥å‡½æ•°åœ¨æ¸¸æˆå¼€å§‹æ—¶è°ƒç”¨ï¼Œå¯ä»¥åœ¨æ­¤ä¿®æ”¹åŸæœ‰çš„æ•°æ®ï¼Œä»¥åŠé‡å®šä¹‰åŸæœ‰çš„å‡½æ•°ï¼Œä»¥å®ç°å¯¹åŸæœ‰å‡½æ•°çš„ä¿®æ”¹ã€
+--                    è¿™æ ·å°±å¯ä»¥åŸºæœ¬ä¸åŠ¨åŸå§‹çš„å‡½æ•°
+--2. åŸæœ‰å‡½æ•°çš„é‡è½½å‡½æ•°ã€‚ SetModifyä¸­é‡è½½çš„å‡½æ•°æ”¾åœ¨æ­¤å¤„ã€‚å°½é‡ä¸ä¿®æ”¹JYMain.luaæ–‡ä»¶ï¼Œå¯¹å®ƒçš„ä¿®æ”¹é‡‡ç”¨é‡å®šä¹‰å‡½æ•°çš„å½¢å¼ã€‚
+--3. æ–°çš„ç‰©å“ä½¿ç”¨å‡½æ•°ã€‚
+--4. æ–°çš„åœºæ™¯äº‹ä»¶å‡½æ•°ã€‚
 
 
 
---¶ÔjymainµÄĞŞ¸Ä£¬ÒÔ¼°Ôö¼ÓĞÂµÄÎïÆ·º¯ÊıºÍ³¡¾°ÊÂ¼şº¯Êı¡£
---×¢ÒâÕâÀï¿ÉÒÔ¶¨ÒåÈ«³Ì±äÁ¿¡£
+
+
+--å¯¹jymainçš„ä¿®æ”¹ï¼Œä»¥åŠå¢åŠ æ–°çš„ç‰©å“å‡½æ•°å’Œåœºæ™¯äº‹ä»¶å‡½æ•°ã€‚
+--æ³¨æ„è¿™é‡Œå¯ä»¥å®šä¹‰å…¨ç¨‹å˜é‡ã€‚
 function SetModify()
 
-   --ÕâÊÇÒ»¸ö¶¨Òåº¯ÊıµÄÀı×Ó¡£ÕâÀïÖØĞÂĞŞ¸ÄÖ÷²Ëµ¥ÖĞµÄÏµÍ³²Ëµ¥£¬Ôö¼ÓÔÚÓÎÏ·ÔËĞĞÖĞ¿ØÖÆÒôĞ§µÄ¹¦ÄÜ¡£
-   --Ô­À´Ö»ÄÜÔÚjyconst.luaÖĞÍ¨¹ı²ÎÊıÔÚÔËĞĞÇ°¿ØÖÆ£¬²»ÄÜ×öµ½ÊµÊ±¿ØÖÆ¡£
-   Menu_System_old=Menu_System;         --±¸·İÔ­Ê¼º¯Êı£¬Èç¹ûĞÂµÄº¯ÊıĞèÒª£¬»¹¿ÉÒÔµ÷ÓÃÔ­Ê¼º¯Êı¡£
+   --è¿™æ˜¯ä¸€ä¸ªå®šä¹‰å‡½æ•°çš„ä¾‹å­ã€‚è¿™é‡Œé‡æ–°ä¿®æ”¹ä¸»èœå•ä¸­çš„ç³»ç»Ÿèœå•ï¼Œå¢åŠ åœ¨æ¸¸æˆè¿è¡Œä¸­æ§åˆ¶éŸ³æ•ˆçš„åŠŸèƒ½ã€‚
+   --åŸæ¥åªèƒ½åœ¨jyconst.luaä¸­é€šè¿‡å‚æ•°åœ¨è¿è¡Œå‰æ§åˆ¶ï¼Œä¸èƒ½åšåˆ°å®æ—¶æ§åˆ¶ã€‚
+   Menu_System_old=Menu_System;         --å¤‡ä»½åŸå§‹å‡½æ•°ï¼Œå¦‚æœæ–°çš„å‡½æ•°éœ€è¦ï¼Œè¿˜å¯ä»¥è°ƒç”¨åŸå§‹å‡½æ•°ã€‚
    Menu_System=Menu_System_new;
 
-   --ÔÚ´Ë¶¨ÒåÌØÊâÎïÆ·¡£Ã»ÓĞ¶¨ÒåµÄ¾ùµ÷ÓÃÈ±Ê¡ÎïÆ·º¯Êı
-    JY.ThingUseFunction[182]=Show_Position;     --ÂŞÅÌº¯Êı
-	JY.ThingUseFunction[0]=newThing_0;   --¸Ä±äÔ­À´¿µ±´ÌØµÄ¹¦ÄÜÎª×íÉúÃÎËÀ¾ÆÍü¼ÇÎä¹¦¡£
+   --åœ¨æ­¤å®šä¹‰ç‰¹æ®Šç‰©å“ã€‚æ²¡æœ‰å®šä¹‰çš„å‡è°ƒç”¨ç¼ºçœç‰©å“å‡½æ•°
+    JY.ThingUseFunction[182]=Show_Position;     --ç½—ç›˜å‡½æ•°
+	JY.ThingUseFunction[0]=newThing_0;   --æ”¹å˜åŸæ¥åº·è´ç‰¹çš„åŠŸèƒ½ä¸ºé†‰ç”Ÿæ¢¦æ­»é…’å¿˜è®°æ­¦åŠŸã€‚
 	JY.ThingUseFunction[2]=newThing_2;
 
-  --ÔÚ´Ë¿ÉÒÔ¶¨ÒåÊ¹ÓÃĞÂÊÂ¼şº¯ÊıµÄ³¡¾°
-    JY.SceneNewEventFunction[1]=newSceneEvent_1;          --ĞÂµÄºÓÂå¿ÍÕ»ÊÂ¼ş´¦Àíº¯Êı
+  --åœ¨æ­¤å¯ä»¥å®šä¹‰ä½¿ç”¨æ–°äº‹ä»¶å‡½æ•°çš„åœºæ™¯
+    JY.SceneNewEventFunction[1]=newSceneEvent_1;          --æ–°çš„æ²³æ´›å®¢æ ˆäº‹ä»¶å¤„ç†å‡½æ•°
 
 end
 
 
---ĞÂµÄÏµÍ³×Ó²Ëµ¥£¬Ôö¼Ó¿ØÖÆÒôÀÖºÍÒôĞ§
+--æ–°çš„ç³»ç»Ÿå­èœå•ï¼Œå¢åŠ æ§åˆ¶éŸ³ä¹å’ŒéŸ³æ•ˆ
 function Menu_System_new()
 	local menu={
-	             {"¶ÁÈ¡½ø¶È",Menu_ReadRecord,1},
-                 {"±£´æ½ø¶È",Menu_SaveRecord,1},
-				 {"¹Ø±ÕÒôÀÖ",Menu_SetMusic,1},
-				 {"¹Ø±ÕÒôĞ§",Menu_SetSound,1},
-				 {"È«ÆÁÇĞ»»",Menu_FullScreen,1},
-                 {"Àë¿ªÓÎÏ·",Menu_Exit,1},   };
+	             {"è¯»å–è¿›åº¦",Menu_ReadRecord,1},
+                 {"ä¿å­˜è¿›åº¦",Menu_SaveRecord,1},
+				 {"å…³é—­éŸ³ä¹",Menu_SetMusic,1},
+				 {"å…³é—­éŸ³æ•ˆ",Menu_SetSound,1},
+				 {"å…¨å±åˆ‡æ¢",Menu_FullScreen,1},
+                 {"ç¦»å¼€æ¸¸æˆ",Menu_Exit,1},   };
 
     if JY.EnableMusic==0 then
-	    menu[3][1]="´ò¿ªÒôÀÖ";
+	    menu[3][1]="æ‰“å¼€éŸ³ä¹";
 	end
 
 	if JY.EnableSound==0 then
-	    menu[4][1]="´ò¿ªÒôĞ§";
+	    menu[4][1]="æ‰“å¼€éŸ³æ•ˆ";
     end
 
 
     local r=ShowMenu(menu,6,0,CC.MainSubMenuX,CC.MainSubMenuY,0,0,1,1,CC.DefaultFont,C_ORANGE, C_WHITE);
     if r == 0 then
         return 0;
-    elseif r<0 then   --ÒªÍË³öÈ«²¿²Ëµ¥£¬
+    elseif r<0 then   --è¦é€€å‡ºå…¨éƒ¨èœå•ï¼Œ
         return 1;
  	end
 end
@@ -89,40 +89,40 @@ end
 
 
 ----------------------------------------------------------------
----------------------------ÎïÆ·Ê¹ÓÃº¯Êı--------------------------
+---------------------------ç‰©å“ä½¿ç”¨å‡½æ•°--------------------------
 
 
---ÂŞÅÌº¯Êı£¬ÏÔÊ¾Ö÷µØÍ¼Ö÷½ÇÎ»ÖÃ
+--ç½—ç›˜å‡½æ•°ï¼Œæ˜¾ç¤ºä¸»åœ°å›¾ä¸»è§’ä½ç½®
 function Show_Position()
     if JY.Status ~=GAME_MMAP then
         return 0;
     end
-    DrawStrBoxWaitKey(string.format("µ±Ç°Î»ÖÃ(%d,%d)",JY.Base["ÈËX"],JY.Base["ÈËY"]),C_ORANGE,CC.DefaultFont);
+    DrawStrBoxWaitKey(string.format("å½“å‰ä½ç½®(%d,%d)",JY.Base["äººX"],JY.Base["äººY"]),C_ORANGE,CC.DefaultFont);
 	return 1;
 end
 
 
---×íÉúÃÎËÀ¾Æ¡£ºÈºó¿ÉÒÔÍüµôÒ»ÖÖÎä¹¦
+--é†‰ç”Ÿæ¢¦æ­»é…’ã€‚å–åå¯ä»¥å¿˜æ‰ä¸€ç§æ­¦åŠŸ
 function newThing_0(id)
     if JY.Status ==GAME_WMAP then
 	    return 0;
 	end
 
     Cls();
-    if DrawStrBoxYesNo(-1,-1,"ºÈºó»áÍü¼ÇÎä¹¦£¬µ«Ëğº¦ÉúÃü£¬ÊÇ·ñ¼ÌĞø?",C_WHITE,CC.DefaultFont,1) == false then
+    if DrawStrBoxYesNo(-1,-1,"å–åä¼šå¿˜è®°æ­¦åŠŸï¼Œä½†æŸå®³ç”Ÿå‘½ï¼Œæ˜¯å¦ç»§ç»­?",C_WHITE,CC.DefaultFont,1) == false then
         return 0;
     end
     Cls();
-    DrawStrBox(CC.MainSubMenuX,CC.MainSubMenuY,string.format("Ë­Òª·şÓÃ%s?",JY.Thing[id]["Ãû³Æ"]),C_WHITE,CC.DefaultFont,1);
+    DrawStrBox(CC.MainSubMenuX,CC.MainSubMenuY,string.format("è°è¦æœç”¨%s?",JY.Thing[id]["åç§°"]),C_WHITE,CC.DefaultFont,1);
 	local nexty=CC.MainSubMenuY+CC.SingleLineHeight;
     local r=SelectTeamMenu(CC.MainSubMenuX,nexty);
     if r<=0 then
 	    return 0;
 	end
 
-	local pid=JY.Base["¶ÓÎé" .. r];
+	local pid=JY.Base["é˜Ÿä¼" .. r];
 
-	if JY.Person[pid]["ÉúÃü×î´óÖµ"]<=50 then
+	if JY.Person[pid]["ç”Ÿå‘½æœ€å¤§å€¼"]<=50 then
 	    return 0;
 	end
 
@@ -130,9 +130,9 @@ function newThing_0(id)
     local numwugong=0;
     local menu={};
     for i=1,10 do
-        local tmp=JY.Person[pid]["Îä¹¦" .. i];
+        local tmp=JY.Person[pid]["æ­¦åŠŸ" .. i];
         if tmp>0 then
-            menu[i]={JY.Wugong[tmp]["Ãû³Æ"],nil,1};
+            menu[i]={JY.Wugong[tmp]["åç§°"],nil,1};
             numwugong=numwugong+1;
         end
     end
@@ -141,25 +141,25 @@ function newThing_0(id)
         return 0;
     end
 
-    DrawStrBox(CC.MainSubMenuX,CC.MainSubMenuY,string.format("ÇëÑ¡ÔñÒªÍü¼ÇµÄÎä¹¦"),C_WHITE,CC.DefaultFont,1);
+    DrawStrBox(CC.MainSubMenuX,CC.MainSubMenuY,string.format("è¯·é€‰æ‹©è¦å¿˜è®°çš„æ­¦åŠŸ"),C_WHITE,CC.DefaultFont,1);
 
 	r=ShowMenu(menu,numwugong,0,CC.MainSubMenuX,nexty,0,0,1,1,CC.DefaultFont,C_ORANGE,C_WHITE);
 
     if r<=0 then
 	    return 0;
     else
-        local s=string.format("%s Íü¼ÇÎä¹¦ %s",JY.Person[pid]["ĞÕÃû"],JY.Wugong[JY.Person[pid]["Îä¹¦" .. r]]["Ãû³Æ"]);
+        local s=string.format("%s å¿˜è®°æ­¦åŠŸ %s",JY.Person[pid]["å§“å"],JY.Wugong[JY.Person[pid]["æ­¦åŠŸ" .. r]]["åç§°"]);
 		DrawStrBoxWaitKey(s,C_WHITE,24);
 
 		for i=r+1,10 do
-		    JY.Person[pid]["Îä¹¦" .. i-1]=JY.Person[pid]["Îä¹¦" .. i];
-		    JY.Person[pid]["Îä¹¦µÈ¼¶" .. i-1]=JY.Person[pid]["Îä¹¦µÈ¼¶" .. i];
+		    JY.Person[pid]["æ­¦åŠŸ" .. i-1]=JY.Person[pid]["æ­¦åŠŸ" .. i];
+		    JY.Person[pid]["æ­¦åŠŸç­‰çº§" .. i-1]=JY.Person[pid]["æ­¦åŠŸç­‰çº§" .. i];
 		end
 
-		local v,str=AddPersonAttrib(pid,"ÉúÃü×î´óÖµ",-50);
+		local v,str=AddPersonAttrib(pid,"ç”Ÿå‘½æœ€å¤§å€¼",-50);
 
 	    DrawStrBoxWaitKey(str,C_WHITE,CC.DefaultFont);
-        AddPersonAttrib(pid,"ÉúÃü",0);
+        AddPersonAttrib(pid,"ç”Ÿå‘½",0);
 
         instruct_32(id,-1);
 	end
@@ -168,7 +168,7 @@ function newThing_0(id)
 end
 
 
---»¹»êÒº£¬Õ½¶·Ê±¿ÉÒÔÊ¹Ò»¸öËÀÍöµÄ¶ÓÓÑ¸´»î£¬¸÷Ïî»úÄÜ»Ö¸´50%
+--è¿˜é­‚æ¶²ï¼Œæˆ˜æ–—æ—¶å¯ä»¥ä½¿ä¸€ä¸ªæ­»äº¡çš„é˜Ÿå‹å¤æ´»ï¼Œå„é¡¹æœºèƒ½æ¢å¤50%
 function newThing_2(thingid)
     if JY.Status ~=GAME_WMAP then
 	    return 0;
@@ -177,8 +177,8 @@ function newThing_2(thingid)
 	local menu={};
     local menunum=0;
     for i=0,WAR.PersonNum-1 do
-	    menu[i+1]={JY.Person[WAR.Person[i]["ÈËÎï±àºÅ"]]["ĞÕÃû"],nil,0}
-        if WAR.Person[i]["ÎÒ·½"]==true and WAR.Person[i]["ËÀÍö"]==true then
+	    menu[i+1]={JY.Person[WAR.Person[i]["äººç‰©ç¼–å·"]]["å§“å"],nil,0}
+        if WAR.Person[i]["æˆ‘æ–¹"]==true and WAR.Person[i]["æ­»äº¡"]==true then
             menu[i+1][3]=1;
 			menunum=menunum+1;
         end
@@ -189,29 +189,29 @@ function newThing_2(thingid)
 	end
 
 	Cls();
-    DrawStrBox(CC.MainSubMenuX,CC.MainSubMenuY,string.format("ÇëÑ¡ÔñÒª¸´»îµÄ¶ÓÓÑ"),C_WHITE,CC.DefaultFont);
+    DrawStrBox(CC.MainSubMenuX,CC.MainSubMenuY,string.format("è¯·é€‰æ‹©è¦å¤æ´»çš„é˜Ÿå‹"),C_WHITE,CC.DefaultFont);
 	local nexty=CC.MainSubMenuY+CC.SingleLineHeight;
     local r=ShowMenu(menu,WAR.PersonNum,0,CC.MainSubMenuX,nexty,0,0,1,1,CC.DefaultFont,C_ORANGE,C_WHITE);
     Cls();
     if r>0 then
-	    r=r-1;           --²Ëµ¥·µ»ØÖµÊÇ´Ó1¿ªÊ¼±àºÅµÄ¡£
-		WAR.Person[r]["ËÀÍö"]=false;
-        local pid=WAR.Person[r]["ÈËÎï±àºÅ"];
-        JY.Person[pid]["ÉúÃü"]=JY.Person[pid]["ÉúÃü×î´óÖµ"];
+	    r=r-1;           --èœå•è¿”å›å€¼æ˜¯ä»1å¼€å§‹ç¼–å·çš„ã€‚
+		WAR.Person[r]["æ­»äº¡"]=false;
+        local pid=WAR.Person[r]["äººç‰©ç¼–å·"];
+        JY.Person[pid]["ç”Ÿå‘½"]=JY.Person[pid]["ç”Ÿå‘½æœ€å¤§å€¼"];
         SetRevivePosition(r);
         instruct_32(thingid,-1);
-        WarSetPerson();        --ÖØĞÂÉè¶¨Õ½¶·Î»ÖÃ
+        WarSetPerson();        --é‡æ–°è®¾å®šæˆ˜æ–—ä½ç½®
 	    return 1;
 	else
 	    return 0;
 	end
 end
 
---ÉèÖÃ¸´»î¶ÓÓÑµÄÎ»ÖÃÎª¾àÀëµ±Ç°Ê¹ÓÃÎïÆ·µÄÕ½¶·ÈËÎï×î½üµÄ¿ÕÎ»
+--è®¾ç½®å¤æ´»é˜Ÿå‹çš„ä½ç½®ä¸ºè·ç¦»å½“å‰ä½¿ç”¨ç‰©å“çš„æˆ˜æ–—äººç‰©æœ€è¿‘çš„ç©ºä½
 function  SetRevivePosition(id)
 	local minDest=math.huge;
 	local x,y;
-	War_CalMoveStep(WAR.CurID,100,0);   --¼ÆËãÒÆ¶¯²½Êı ¼ÙÉè×î´ó100²½
+	War_CalMoveStep(WAR.CurID,100,0);   --è®¡ç®—ç§»åŠ¨æ­¥æ•° å‡è®¾æœ€å¤§100æ­¥
 	for i=0,CC.WarWidth-1 do
 		for j=0,CC.WarHeight-1 do
 			--local dest=Byte.get16(WAR.Map3,(j*CC.WarWidth+i)*2);
@@ -232,27 +232,27 @@ function  SetRevivePosition(id)
 	end
 
 	if minDest<math.huge then
-        WAR.Person[id]["×ø±êX"]=x;
-        WAR.Person[id]["×ø±êY"]=y;
+        WAR.Person[id]["åæ ‡X"]=x;
+        WAR.Person[id]["åæ ‡Y"]=y;
 	end
 
 end
 
 
 ------------------------------------------------------------------------------------------
--------ĞÂµÄ³¡¾°ÊÂ¼şº¯ÊıÊµÀı
+-------æ–°çš„åœºæ™¯äº‹ä»¶å‡½æ•°å®ä¾‹
 
---¶ÔÃ¿¸ö³¡¾°Ã¿¸öD*¶¼¶ÔÓ¦Ò»¸öluaÎÄ¼ş¡£ÔÚ´ËÎÄ¼şÖĞ´¦Àí²»Í¬µÄ´¥·¢·½Ê½ºÍÊÂ¼ş±ä»¯Çé¿ö
---ÕâÑù×öÓĞÒ»¸öÈ±µã£¬Èç¹û¶à¸öD*ĞèÒªµ÷ÓÃÍ¬ÑùµÄÊÂ¼şÔõÃ´°ì£¿Ò»¸ö°ì·¨ÊÇÔÚÒ»¸öluaÎÄ¼şÖĞ¼ÌĞøÓÃdofileµ÷ÓÃÁíÒ»¸ö¡£
---ÁíÒ»¸ö°ì·¨ÊÇ×öÒ»¸ö×Ô¶¨ÒåµÄ³¡¾°ÊÂ¼ş´¦Àíº¯Êı£¬ÔÚÀïÃæÅĞ¶Ï²»Í¬µÄDµ÷ÓÃ²»Í¬µÄº¯Êı¡£
+--å¯¹æ¯ä¸ªåœºæ™¯æ¯ä¸ªD*éƒ½å¯¹åº”ä¸€ä¸ªluaæ–‡ä»¶ã€‚åœ¨æ­¤æ–‡ä»¶ä¸­å¤„ç†ä¸åŒçš„è§¦å‘æ–¹å¼å’Œäº‹ä»¶å˜åŒ–æƒ…å†µ
+--è¿™æ ·åšæœ‰ä¸€ä¸ªç¼ºç‚¹ï¼Œå¦‚æœå¤šä¸ªD*éœ€è¦è°ƒç”¨åŒæ ·çš„äº‹ä»¶æ€ä¹ˆåŠï¼Ÿä¸€ä¸ªåŠæ³•æ˜¯åœ¨ä¸€ä¸ªluaæ–‡ä»¶ä¸­ç»§ç»­ç”¨dofileè°ƒç”¨å¦ä¸€ä¸ªã€‚
+--å¦ä¸€ä¸ªåŠæ³•æ˜¯åšä¸€ä¸ªè‡ªå®šä¹‰çš„åœºæ™¯äº‹ä»¶å¤„ç†å‡½æ•°ï¼Œåœ¨é‡Œé¢åˆ¤æ–­ä¸åŒçš„Dè°ƒç”¨ä¸åŒçš„å‡½æ•°ã€‚
 
 
--------ĞÂµÄºÓÂå¿ÍÕ»³¡¾°ÊÂ¼ş´¦Àíº¯Êı
---ÓÉÓÚÕâÊÇÔÚ¾ÉµÄ´¦Àíº¯Êı»ù´¡ÉÏÔö¼ÓÁËD*£¬Òò´Ë²ÅĞèÒªµ¥¶À¶¨ÖÆÒ»¸öº¯Êı¡£
---Èç¹ûÊÇÈ«ĞÂµÄ´¦Àíº¯Êı£¬Ö±½ÓÊ¹ÓÃnewCallEvent¼´¿É¡£
---flag 1 ¿Õ¸ñ´¥·¢£¬2£¬ÎïÆ·´¥·¢£¬3£¬Â·¹ı´¥·¢
+-------æ–°çš„æ²³æ´›å®¢æ ˆåœºæ™¯äº‹ä»¶å¤„ç†å‡½æ•°
+--ç”±äºè¿™æ˜¯åœ¨æ—§çš„å¤„ç†å‡½æ•°åŸºç¡€ä¸Šå¢åŠ äº†D*ï¼Œå› æ­¤æ‰éœ€è¦å•ç‹¬å®šåˆ¶ä¸€ä¸ªå‡½æ•°ã€‚
+--å¦‚æœæ˜¯å…¨æ–°çš„å¤„ç†å‡½æ•°ï¼Œç›´æ¥ä½¿ç”¨newCallEventå³å¯ã€‚
+--flag 1 ç©ºæ ¼è§¦å‘ï¼Œ2ï¼Œç‰©å“è§¦å‘ï¼Œ3ï¼Œè·¯è¿‡è§¦å‘
 function newSceneEvent_1(flag)
-    if JY.CurrentD<=18 then     --¶ÔÒÔÇ°±àºÅµÄD*£¬ÈÔÈ»µ÷ÓÃ¾ÉµÄ´¦Àíº¯Êı
+    if JY.CurrentD<=18 then     --å¯¹ä»¥å‰ç¼–å·çš„D*ï¼Œä»ç„¶è°ƒç”¨æ—§çš„å¤„ç†å‡½æ•°
         oldEventExecute(flag);
     else
         newCallEvent(flag);
@@ -260,7 +260,7 @@ function newSceneEvent_1(flag)
 end
 
 
---ĞÂµÄÍ¨ÓÃÊÂ¼ş´¦Àíº¯Êı
+--æ–°çš„é€šç”¨äº‹ä»¶å¤„ç†å‡½æ•°
 function newCallEvent(flag)
 
     JY.CurrentEventType=flag;
@@ -274,8 +274,8 @@ function newCallEvent(flag)
 		eventnum=GetD(JY.SubScene,JY.CurrentD,4);
 	end
 
-    if eventnum>=0 then           --Ö»ÓĞ´óÓÚ»òµÈÓÚ0Ê±²Åµ÷ÓÃluaÎÄ¼ş¡£
-	--°´ÕÕ¸ø¶¨¸ñÊ½Éú³ÉÒªµ÷ÓÃµÄD*´¦ÀíÎÄ¼şÃû¡£È»ºó¼ÓÔØÔËĞĞ
+    if eventnum>=0 then           --åªæœ‰å¤§äºæˆ–ç­‰äº0æ—¶æ‰è°ƒç”¨luaæ–‡ä»¶ã€‚
+	--æŒ‰ç…§ç»™å®šæ ¼å¼ç”Ÿæˆè¦è°ƒç”¨çš„D*å¤„ç†æ–‡ä»¶åã€‚ç„¶ååŠ è½½è¿è¡Œ
 		local eventfilename=string.format(CONFIG.NewEventPath .. "scene_%d_event_%d.lua",JY.SubScene,JY.CurrentD);
 		dofile(eventfilename);
     end

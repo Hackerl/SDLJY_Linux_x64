@@ -1,4 +1,4 @@
 --function oldevent_825()
-    instruct_52();   --  52(34):¿´µÀµÂ
+    instruct_52();   --  52(34):çœ‹é“å¾·
 --end
 

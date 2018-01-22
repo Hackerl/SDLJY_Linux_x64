@@ -140,24 +140,7 @@ int JY_DrawStr(int x, int y, const char *str,int color,int size,const char *font
 	c2.b=c.b>>1;
 	c2.g=c.g>>1;
 
-
-    if(charset==0 &&  OScharset==0){//GBK -->unicode简体
-         JY_CharSet(str,tmp2,3);      
-	}
-	else if(charset==0 &&  OScharset==1){//GBK -->unicode繁体
-        JY_CharSet(str,tmp1,1);
-        JY_CharSet(tmp1,tmp2,2);
-	}
-    else if(charset==1 &&  OScharset==0){ //big5-->unicode简体
-        JY_CharSet(str,tmp1,0);
-        JY_CharSet(tmp1,tmp2,3);
-	}
-	else if(charset==1 &&  OScharset==1){  ////big5-->unicode繁体
-        JY_CharSet(str,tmp2,2);
-	}
-	else{
-        strcpy(tmp2,str);
-	}
+    strcpy(tmp2,str);
 
 	 
 	if(g_Rotate==0){
@@ -219,96 +202,6 @@ int JY_DrawStr(int x, int y, const char *str,int color,int size,const char *font
     SDL_FreeSurface(fontSurface);   //释放表面
     return 0;
 }
-
-  
-
-// 汉字字符集转换
-// flag = 0   Big5 --> GBK     
-//      = 1   GBK  --> Big5    
-//      = 2   Big5 --> Unicode
-//      = 3   GBK  --> Unicode
-// 注意要保证dest有足够的空间，一般建议取src长度的两倍+2，保证全英文字符也能转化为unicode
-int  JY_CharSet(const char *src, char *dest, int flag)
-{
- 
-    Uint8 *psrc,*pdest;
-    Uint8 b0,b1;
-	int d0;
-	Uint16 tmpchar;
-
-	psrc=(Uint8*)src;
-	pdest=(Uint8*)dest;
-
-    for(;;){
-        b0=*psrc;
-		if(b0==0){       //字符串结束
-			if( (flag==0) || (flag==1) ){
-				*pdest=0;
-				break;
-			}
-			else{    //unicode结束标志 0x0000?
-				*pdest=0;
-				*(pdest+1)=0;
-				break;                
-			}
-		}
-		if(b0<128){      //英文字符
-			if( (flag==0) || (flag==1) ){  //不转换
-				*pdest=b0;
-				pdest++;
-				psrc++;
-			}
-			else{                //unicode 后面加个0
-				*pdest=b0;
-				pdest++;
-				*pdest=0;
-				pdest++;
-				psrc++;                
-			}
-		}
-		else{              //中文字符
-			b1=*(psrc+1);
-            if(b1==0){     // 非正常结束
-                *pdest='?';
-				*(pdest+1)=0;
-				break;
-			}
-			else{
-				d0=b0+b1*256;
-				switch(flag){
-				case 0:   //Big5 --> GBK    
-             	    tmpchar=big5_gbk[b0-128][b1];
-					break;
-				case 1:   //GBK  --> Big5  
-					tmpchar=gbk_big5[b0-128][b1];
-					break;
-				case 2:   //Big5 --> Unicode
-					tmpchar=big5_unicode[b0-128][b1];
-					break;
-				case 3:   //GBK  --> Unicode
-					tmpchar=gbk_unicode[b0-128][b1];
-					break;                
-				default:
-					tmpchar=0;
-				}
-                
-				if(tmpchar !=0){
-                    *(Uint16*)pdest=tmpchar;
-				}
-				else{
-                    *pdest='?';
-					*(pdest+1)='?';
-				}
-
-				pdest=pdest+2;
-				psrc=psrc+2;
-			}
-        }
-	}
-
-    return 0;
-}
-
 
 //加载码表文件
 //码表文件顺序： 按GBK排列，unicode，big5。然后按big5排列，unicode和gbk。

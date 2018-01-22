@@ -1,4 +1,4 @@
 --function oldevent_939()
-    instruct_65();   --  65(41):韦小宝去其它客栈
+    instruct_65();   --  65(41):闊﹀皬瀹濆幓鍏跺畠瀹㈡爤
 --end
 
