@@ -1,3 +1,23 @@
+function string.utf8len(input)  
+    local len  = string.len(input)  
+    local left = len  
+    local cnt  = 0  
+    local arr  = {0, 0xc0, 0xe0, 0xf0, 0xf8, 0xfc}  
+    while left ~= 0 do  
+        local tmp = string.byte(input, -left)  
+        local i   = #arr  
+        while arr[i] do  
+            if tmp >= arr[i] then  
+                left = left - i  
+                break  
+            end  
+            i = i - 1  
+        end  
+        cnt = cnt + 1  
+    end  
+    return cnt  
+end
+
 local iconv = require("iconv")
 function createIconv(from,to,text)
   local cd = iconv.new(to .. "//TRANSLIT", from);

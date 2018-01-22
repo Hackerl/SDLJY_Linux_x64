@@ -1898,10 +1898,10 @@ function DrawString(x,y,str,color,size)         --显示阴影字符串
 --    local r,g,b=GetRGB(color);
 --    lib.DrawStr(x+1,y+1,str,RGB(math.modf(r/2),math.modf(g/2),math.modf(b/2)),size,CC.FontName,CC.SrcCharSet,CC.OSCharSet);
     -- 统一转换位 unicode
-    print(str);
-    local str_lenth = string.len(str);
+    local str_lenth = string.utf8len(str);
     str = change_charsert(str, 3);
-    lib.DrawStr(x,y,str,str_lenth,color,size,CC.FontName);
+    str = string.sub(str,3,-1); -- 转换后unicode 开始占用两个字节 ff fe 截取后面部分
+    lib.DrawStr(x,y,str,str_lenth, color,size,CC.FontName);
 end
 
 --显示带框的字符串
