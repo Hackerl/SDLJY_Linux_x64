@@ -1899,9 +1899,9 @@ function DrawString(x,y,str,color,size)         --显示阴影字符串
 --    lib.DrawStr(x+1,y+1,str,RGB(math.modf(r/2),math.modf(g/2),math.modf(b/2)),size,CC.FontName,CC.SrcCharSet,CC.OSCharSet);
     -- 统一转换位 unicode
     print(str);
+    local str_lenth = string.len(str);
     str = change_charsert(str, 3);
-    print(str);
-    lib.DrawStr(x,y,str,string.len(str) ,color,size,CC.FontName);
+    lib.DrawStr(x,y,str,str_lenth,color,size,CC.FontName);
 end
 
 --显示带框的字符串

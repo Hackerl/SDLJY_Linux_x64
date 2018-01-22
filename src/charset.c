@@ -126,7 +126,7 @@ int JY_DrawStr(int x, int y, const char *str, int strlen, int color,int size,con
 	    return 0;
 	}
     memset(tmp1, 0, 256);
-    memcpy(tmp1, str , 256);
+    memcpy(tmp1, str , strlen * 2);
 
 
     myfont=GetFont(fontname,size);

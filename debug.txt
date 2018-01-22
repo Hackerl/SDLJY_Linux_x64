@@ -1,3 +1,3 @@
-16:38:51 JY_Main start.
-16:38:53 Loadrecord time=5
-16:38:53 Start game cycle
+17:20:49 JY_Main start.
+17:20:50 Loadrecord time=5
+17:20:50 Start game cycle
