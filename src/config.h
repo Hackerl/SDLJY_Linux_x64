@@ -1,6 +1,3 @@
-
-
-
 //适应不同平台和编译器的兼容性
 
 //目前只在VC6/VC8/symbian C/gcc下测试通过
@@ -15,14 +12,12 @@
     #define CONFIG_FILE "e:\\data\\jy\\config.lua"
     #define DEBUG_FILE "e:\\data\\jy\\debug.txt"
     #define ERROR_FILE "e:\\data\\jy\\error.txt"
-    #define HZMB_FILE "e:\\data\\jy\\hzmb.dat"
 
 #else
 
     #define CONFIG_FILE "config.lua"
     #define DEBUG_FILE "debug.txt"
     #define ERROR_FILE "error.txt"
-    #define HZMB_FILE "hzmb.dat"
 
 #endif
 

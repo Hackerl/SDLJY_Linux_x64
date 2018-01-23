@@ -1,3 +1,5 @@
-21:23:36 JY_Main start.
-21:23:37 Loadrecord time=8
-21:23:37 Start game cycle
+21:25:00 JY_Main start.
+21:25:01 Loadrecord time=6
+21:25:01 Start game cycle
+21:25:05 oldevent_130.lua
+21:25:09 oldevent_129.lua
