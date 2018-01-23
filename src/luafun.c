@@ -18,12 +18,11 @@ int HAPI_DrawStr(lua_State *pL)
     int x=(int)lua_tonumber(pL,1);
 	int y=(int)lua_tonumber(pL,2);
 	const char *str=lua_tostring(pL,3);
-    int strsize=(int)lua_tonumber(pL,4);
-	int color=(int)lua_tonumber(pL,5);
-	int size=(int)lua_tonumber(pL,6);
-	const char *fontname=lua_tostring(pL,7);
+	int color=(int)lua_tonumber(pL,4);
+	int size=(int)lua_tonumber(pL,5);
+	const char *fontname=lua_tostring(pL,6);
 
-    JY_DrawStr(x, y, str,strsize ,color,size,fontname);
+    JY_DrawStr(x, y, str,color,size,fontname);
 
 	return 0;
 }
@@ -148,7 +147,6 @@ int HAPI_Debug(lua_State *pL)
 
 	return 0;
 }
-
 
 int HAPI_SetClip(lua_State *pL)
 {

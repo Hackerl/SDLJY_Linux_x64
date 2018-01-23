@@ -1,6 +1,3 @@
-19:57:24 JY_Main start.
-19:57:27 Loadrecord time=5
-19:57:27 Start game cycle
-19:57:30 oldevent_130.lua
-19:57:32 war start. warid=17
-19:57:33 load war map 5
+21:13:15 JY_Main start.
+21:13:16 Loadrecord time=6
+21:13:16 Start game cycle

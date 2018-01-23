@@ -94,7 +94,7 @@ static TTF_Font *GetFont(const char *filename,int size);
 // fontname 字体名
 // charset 字符集 0 GBK 1 big5
 // OScharset 无用
-int JY_DrawStr(int x, int y, const char *str,int strlen,int color,int size,const char *fontname);
+int JY_DrawStr(int x, int y, const char *str,int color,int size,const char *fontname);
 
 //加载码表转换文件
 int LoadMB(const char* mbfile);

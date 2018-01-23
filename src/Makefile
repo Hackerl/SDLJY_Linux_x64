@@ -13,7 +13,7 @@ BASEFLAGS = -g3 -D_DEBUG=1
 #BASEFLAGS = -s -O3
 
 CFLAGS = ${BASEFLAGS} `sdl-config --cflags` -I/usr/include/lua5.1 -I/usr/include/smpeg
-LDFLAGS = ${BASEFLAGS} `sdl-config --libs` -lSDL_image -lSDL_mixer -lSDL_ttf -llua5.1
+LDFLAGS = ${BASEFLAGS} `sdl-config --libs` -lSDL_image -lSDL_mixer -lSDL_ttf -llua5.1 -lsmpeg
 
 #CFLAGS += -DHAS_SDL_MPEG=1
 #LDFLAGS += -lsmpeg

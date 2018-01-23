@@ -140,9 +140,6 @@ int main(int argc, char *argv[])
 
 	InitGame();          //初始化游戏数据
 
-	LoadMB(HZMB_FILE);  //加载汉字字符集转换码表
- 
-
     Lua_Main(pL_main);          //调用Lua主函数，开始游戏
 
    //关闭lua
