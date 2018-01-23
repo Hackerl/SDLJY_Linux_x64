@@ -1907,7 +1907,7 @@ end
 --显示带框的字符串
 --(x,y) 坐标，如果都为-1,则在屏幕中间显示
 function DrawStrBox(x,y,str,color,size)         --显示带框的字符串
-    local ll=#str;
+    local ll = get_show_width(str);
     local w=size*ll/2+2*CC.MenuBorderPixel;
 	local h=size+2*CC.MenuBorderPixel;
 	if x==-1 then
@@ -1926,7 +1926,7 @@ end
 --改为用菜单询问是否
 function DrawStrBoxYesNo(x,y,str,color,size)        --显示字符串并询问Y/N
     lib.GetKey();
-    local ll=#str;
+    local ll = get_show_width(str);
     local w=size*ll/2+2*CC.MenuBorderPixel;
 	local h=size+2*CC.MenuBorderPixel;
 	if x==-1 then
@@ -2098,8 +2098,8 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
     local maxlength=0;
     if x2==0 and y2==0 then
         for i=1,newNumItem do
-            if string.utf8len(newMenu[i][1]) * 2 > maxlength then
-                maxlength=string.utf8len(newMenu[i][1]) *2;
+            if get_show_width(newMenu[i][1]) > maxlength then
+                maxlength=get_show_width(newMenu[i][1]);
             end
         end
         w=size*maxlength/2+2*CC.MenuBorderPixel;        --按照半个汉字计算宽度，一边留4个象素
@@ -2225,8 +2225,8 @@ function ShowMenu2(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,s
     local maxlength=0;
     if x2==0 and y2==0 then
         for i=1,newNumItem do
-            if string.len(newMenu[i][1])>maxlength then
-                maxlength=string.len(newMenu[i][1]);
+            if get_show_width(newMenu[i][1])>maxlength then
+                maxlength=get_show_width(newMenu[i][1]);
             end
         end
 		w=(size*maxlength/2+CC.RowPixel)*num+CC.MenuBorderPixel;
@@ -2637,8 +2637,8 @@ function UseThingEffect(id,personid)          --药品使用实际效果
     if strnum>1 then
         local maxlength=0      --计算字符串最大长度
         for i = 0,strnum-1 do
-            if #str[i] > maxlength then
-                maxlength=#str[i];
+            if get_show_width(str) > maxlength then
+                maxlength = get_show_width(str) * 2;
             end
         end
         Cls();
@@ -2768,9 +2768,9 @@ function GenTalkString(str,n)              --产生对话显示需要的字符�
     end
 
     local newstr="";
-    while #tmpstr>0 do
+    while get_show_width(tmpstr) * 2 > 0 do
 		local w=0;
-		while w<#tmpstr do
+		while w<get_show_width(tmpstr) do
 		    local v=string.byte(tmpstr,w+1);          --当前字符的值
 			if v>=128 then
 			    w=w+2;
@@ -2782,7 +2782,7 @@ function GenTalkString(str,n)              --产生对话显示需要的字符�
 			end
 		end
 
-        if w<#tmpstr then
+        if w<get_show_width(tmpstr) then
 		    if w==2*n-1 and string.byte(tmpstr,w+1)<128 then
 				newstr=newstr .. string.sub(tmpstr,1,w+1) .. "*";
 				tmpstr=string.sub(tmpstr,w+2,-1);

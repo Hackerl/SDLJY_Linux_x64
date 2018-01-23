@@ -16,8 +16,8 @@ CONFIG.Type= 1;
 CONFIG.Rotate=0;         --屏幕是否旋转  0 不旋转 1 右转90度。CONFIG.Width/Height仍然为未旋转前的屏幕宽高
                          --目前旋转暂时不支持播放mpeg
 
-CONFIG.Width  = 640;       -- 游戏图形窗口宽
-CONFIG.Height = 480;      -- 游戏图形窗口宽
+CONFIG.Width  = 1280;       -- 游戏图形窗口宽
+CONFIG.Height = 720;      -- 游戏图形窗口宽
 
 CONFIG.bpp  =16          -- 全屏时像素色深，一般为16或者32。在窗口模式时直接采用当前屏幕色深，此设置无效
                          -- 不支持8位色深。为提高速度，建议使用16位色深。
@@ -47,8 +47,9 @@ CONFIG.JYMain_Lua=CONFIG.ScriptPath .. "jymain.lua";   --lua主程序名
 
 --显示字体文件。如果是windows，可直接给出系统目录下的字体名。
 --其他系统可以找个合适的truetype字体复制到游戏data或其他目录下，在这里给出路径和文件名
-CONFIG.FontName="font/bkai00mp.ttf";
+CONFIG.FontName="font/DroidSansFallback.ttf";
 
+--此功能暂不可用
 CONFIG.OSCharSet=1      -- 显示字符集 0 简体 1 繁体
 
 --显示主地图x和y方向增加的贴图数，以保证所有贴图能全部显示
@@ -59,8 +60,8 @@ CONFIG.SMapAddY=16;
 CONFIG.WMapAddX=2;
 CONFIG.WMapAddY=18;
 
-CONFIG.MusicVolume=24;            --设置播放音乐的音量(0-128)
-CONFIG.SoundVolume=32;            --设置播放音效的音量(0-128)
+CONFIG.MusicVolume=48;            --设置播放音乐的音量(0-128)
+CONFIG.SoundVolume=64;            --设置播放音效的音量(0-128)
 
 local LargeMemory=1;             --设置内存使用方式 1 多使用内存，0 少使用内存
 

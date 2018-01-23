@@ -46,3 +46,9 @@ function change_charsert(str, flag)
         return createIconv("utf-8" , "unicode", str);
     end
 end
+
+-- 获取utf8应该占用的宽度,一个汉子宽2格,英文字母宽1格,utf8编码长度不定所以转为gbk直接获取长度
+-- gbk中汉字2字节 英文1字节
+function get_show_width(input)  
+    return #createIconv("utf-8" , "gbk", input);
+end
