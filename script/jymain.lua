@@ -129,7 +129,8 @@ function JY_Main_sub()        --真正的游戏主程序入口
 
     lib.PicInit(CC.PaletteFile);       --加载原来的256色调色板
 
-    lib.PlayMPEG(CONFIG.DataPath .. "start.mpg",VK_ESCAPE);
+    -- 开始动画
+    -- lib.PlayMPEG(CONFIG.DataPath .. "start.mpg",VK_ESCAPE);
 
 	Cls();
 
