@@ -2637,8 +2637,8 @@ function UseThingEffect(id,personid)          --药品使用实际效果
     if strnum>1 then
         local maxlength=0      --计算字符串最大长度
         for i = 0,strnum-1 do
-            if get_show_width(str) > maxlength then
-                maxlength = get_show_width(str) * 2;
+            if get_show_width(str[i]) > maxlength then
+                maxlength = get_show_width(str[i]);
             end
         end
         Cls();
@@ -2768,7 +2768,7 @@ function GenTalkString(str,n)              --产生对话显示需要的字符�
     end
 
     local newstr="";
-    while get_show_width(tmpstr) * 2 > 0 do
+    while get_show_width(tmpstr) > 0 do
 		local w=0;
 		while w<get_show_width(tmpstr) do
 		    local v=string.byte(tmpstr,w+1);          --当前字符的值
