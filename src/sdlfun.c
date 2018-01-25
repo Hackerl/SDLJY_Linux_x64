@@ -320,13 +320,14 @@ int JY_Delay(int x)
 // delaytime 每次渐变延时毫秒数
 // Flag=0 从暗到亮，1，从亮到暗
 int JY_ShowSlow(int delaytime,int Flag)
-{
+{  
+/*
   if (Flag) {
     SDL_FillRect(g_Surface,NULL,0);
     JY_ShowSurface(0);
     SDL_Delay(400);
   }
-  /*
+*/
     int i;
 	int step;
 	int t1,t2;
@@ -373,7 +374,6 @@ int JY_ShowSlow(int delaytime,int Flag)
 	}
 
     SDL_FreeSurface(lps1);       //释放表面
-  */
 	return 0;
 }
 
